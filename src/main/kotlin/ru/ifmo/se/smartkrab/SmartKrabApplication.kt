@@ -1,20 +1,29 @@
 package ru.ifmo.se.smartkrab
 
+import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.context.ApplicationContext
+import org.springframework.context.annotation.Bean
 import org.springframework.web.bind.annotation.RestController
+import java.util.*
+
 
 @SpringBootApplication
-@RestController
 class SmartKrabApplication {
-    @GetMapping("/add-user")
-    fun addUser(
-        @RequestParam(value = "name", defaultValue = "World") name: String
-    ): String {
-        return "Add user: $name"
+/*
+    @Bean
+    fun commandLineRunner(ctx: ApplicationContext): CommandLineRunner? {
+        return CommandLineRunner { args: Array<String?>? ->
+            println("Let's inspect the beans provided by Spring Boot:")
+            val beanNames: Array<String> = ctx.beanDefinitionNames
+            Arrays.sort(beanNames)
+            for (beanName in beanNames) {
+                println(beanName)
+            }
+        }
     }
+*/
 }
 
 fun main(args: Array<String>) {
