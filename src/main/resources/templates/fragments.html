@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new tool</title>
+</head>
+
+<body>
+<div th:fragment="navigation">
+    <h3>Navigation:</h3>
+    <ul>
+        <li><a th:href="@{/}">Main page</a></li>
+        <li><a th:href="@{/add-user}">Add new user</a></li>
+        <li><a th:href="@{/extra-coins}">Add extra coins</a></li>
+        <li><a th:href="@{/daily-report}">Daily report</a></li>
+        <li><a th:href="@{/new-order}">Create new order</a></li>
+        <li><a th:href="@{/cooking}">Cooking</a></li>
+        <li><a th:href="@{/add-new-tool}">Add new tool</a></li>
+        <li><a th:href="@{/tools-status}">Tools status</a></li>
+        <li><a th:href="@{/antiplankton}">Anti Plankton</a></li>
+    </ul>
+</div>
+</body>
+
+</html>
