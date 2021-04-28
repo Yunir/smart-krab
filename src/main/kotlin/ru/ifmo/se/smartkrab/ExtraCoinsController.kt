@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 
 import org.springframework.web.bind.annotation.PostMapping
-
-
-
+import ru.ifmo.se.smartkrab.data.ExtraCoins
+import ru.ifmo.se.smartkrab.data.ExtraCoinsRepository
 
 
 @Controller
-class ExtraCoinsController {
+class ExtraCoinsController(val ecRepo: ExtraCoinsRepository) {
+
     @GetMapping("/extra-coins")
     fun extraCoinsForm(model: Model): String {
         model.addAttribute("greeting", Greeting())
@@ -22,6 +22,16 @@ class ExtraCoinsController {
     @PostMapping("/extra-coins")
     fun extraCoinsSubmit(@ModelAttribute greeting: Greeting, model: Model): String {
         model.addAttribute("greeting", greeting)
+
+        ecRepo.save(ExtraCoins(greeting.id.toInt()))
+        // fetch coins
+        println("ExtraCoins found with findAll():")
+        println("-------------------------------")
+        for (extraCoins in ecRepo.findAll()) {
+            println(extraCoins.toString())
+        }
+        println("")
+
         return "extra-coins-submit"
     }
 }
