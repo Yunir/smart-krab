@@ -9,7 +9,7 @@ import javax.persistence.Id
 
 @Entity
 class ExtraCoins(
-    var value: Int,
+    var value: Int = 0,
     var addedAt: LocalDateTime = LocalDateTime.now(),
     @Id @GeneratedValue(strategy = GenerationType.AUTO) var id: Long? = null
 ) {

@@ -9,9 +9,8 @@
 
 <body>
 <h1>Add extra coins</h1>
-<form action="#" th:action="@{/extra-coins}" th:object="${greeting}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Message: <input type="text" th:field="*{content}" /></p>
+<form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
+    <p>Value: <input type="text" th:field="*{value}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 <div th:insert="fragments :: navigation"></div>

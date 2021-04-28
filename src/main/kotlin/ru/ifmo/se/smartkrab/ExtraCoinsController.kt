@@ -15,20 +15,20 @@ class ExtraCoinsController(val ecRepo: ExtraCoinsRepository) {
 
     @GetMapping("/extra-coins")
     fun extraCoinsForm(model: Model): String {
-        model.addAttribute("greeting", Greeting())
+        model.addAttribute("extraCoins", ExtraCoins())
         return "extra-coins"
     }
 
     @PostMapping("/extra-coins")
-    fun extraCoinsSubmit(@ModelAttribute greeting: Greeting, model: Model): String {
-        model.addAttribute("greeting", greeting)
+    fun extraCoinsSubmit(@ModelAttribute extraCoins: ExtraCoins, model: Model): String {
+        model.addAttribute("extraCoins", extraCoins)
 
-        ecRepo.save(ExtraCoins(greeting.id.toInt()))
+        ecRepo.save(extraCoins)
         // fetch coins
         println("ExtraCoins found with findAll():")
         println("-------------------------------")
-        for (extraCoins in ecRepo.findAll()) {
-            println(extraCoins.toString())
+        for (e in ecRepo.findAll()) {
+            println(e.toString())
         }
         println("")
 
