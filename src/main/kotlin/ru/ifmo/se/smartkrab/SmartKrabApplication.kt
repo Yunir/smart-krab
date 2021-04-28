@@ -3,9 +3,9 @@ package ru.ifmo.se.smartkrab
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
-import org.springframework.web.bind.annotation.RestController
+import ru.ifmo.se.smartkrab.data.ExtraCoins
+import ru.ifmo.se.smartkrab.data.ExtraCoinsRepository
 import java.util.*
 
 
@@ -24,6 +24,25 @@ class SmartKrabApplication {
         }
     }
 */
+
+    @Bean
+    fun someExtraCoins(ecRepo: ExtraCoinsRepository): CommandLineRunner {
+        return CommandLineRunner { args: Array<String?>? ->
+            // save some coins
+            ecRepo.save(ExtraCoins(5))
+            ecRepo.save(ExtraCoins(1))
+            ecRepo.save(ExtraCoins(7))
+            ecRepo.save(ExtraCoins(2))
+
+            // fetch coins
+            println("ExtraCoins found with findAll():")
+            println("-------------------------------")
+            for (extraCoins in ecRepo.findAll()) {
+                println(extraCoins.toString())
+            }
+            println("")
+        }
+    }
 }
 
 fun main(args: Array<String>) {
