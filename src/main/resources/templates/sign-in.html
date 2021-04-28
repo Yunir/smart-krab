@@ -11,10 +11,10 @@
 <body>
 <h1>Sign-in to your SmartKrab account</h1>
 <div th:if="${param.error}">
-    Invalid username and password.
+    Invalid username and password. Return to the <a th:href="@{/}">Main page</a>.
 </div>
 <div th:if="${param.logout}">
-    You have been logged out.
+    You have been logged out. Return to the <a th:href="@{/}">Main page</a>.
 </div>
 <form th:action="@{/sign-in}" method="post">
     <div><label> User Name: <input type="text" name="username"/> </label></div>

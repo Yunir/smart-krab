@@ -9,6 +9,16 @@
 
 <body>
 <header th:fragment="header">
+    <h3>Smart Krab</h3>
+    <span th:if="${#httpServletRequest.remoteUser != null}">
+        <div th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</div>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </span>
+    <span th:if="${#httpServletRequest.remoteUser == null}">
+        <a th:href="@{/sign-in}">Sign in</a>
+    </span>
 </header>
 
 <div th:fragment="navigation">

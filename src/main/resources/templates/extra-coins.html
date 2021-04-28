@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div th:insert="fragments :: header"></div>
 <h1>Add extra coins</h1>
 <form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
     <p>Value: <input type="text" th:field="*{value}" /></p>

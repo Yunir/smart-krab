@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<div th:insert="fragments :: header"></div>
 <h1>Register new order</h1>
 <form action="#" th:action="@{/new-order}" th:object="${order}" method="post">
     <p>Position: <input type="text" th:field="*{position}" /></p>
