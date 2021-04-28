@@ -35,8 +35,3 @@ class ExtraCoinsController(val ecRepo: ExtraCoinsRepository) {
         return "extra-coins-submit"
     }
 }
-
-class Greeting {
-    var id: Long = 0
-    var content: String? = null
-}

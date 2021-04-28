@@ -6,7 +6,8 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import ru.ifmo.se.smartkrab.data.ExtraCoins
 import ru.ifmo.se.smartkrab.data.ExtraCoinsRepository
-import java.util.*
+import ru.ifmo.se.smartkrab.data.OrderInfo
+import ru.ifmo.se.smartkrab.data.OrderRepository
 
 
 @SpringBootApplication
@@ -38,6 +39,22 @@ class SmartKrabApplication {
             println("ExtraCoins found with findAll():")
             println("-------------------------------")
             for (extraCoins in ecRepo.findAll()) {
+                println(extraCoins.toString())
+            }
+            println("")
+        }
+    }
+
+    @Bean
+    fun someOrders(oRepo: OrderRepository): CommandLineRunner {
+        return CommandLineRunner { args: Array<String?>? ->
+            // save some coins
+            oRepo.save(OrderInfo(value = 5))
+
+            // fetch coins
+            println("Orders found with findAll():")
+            println("-------------------------------")
+            for (extraCoins in oRepo.findAll()) {
                 println(extraCoins.toString())
             }
             println("")

@@ -3,14 +3,15 @@
       xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-  <meta charset="UTF-8">
-  <title>Extra coins submit</title>
+    <meta charset="UTF-8">
+    <title>Register new order</title>
 </head>
 
 <body>
 <h1>Result</h1>
-<p th:text="'Value: ' + ${extraCoins.value}" />
-<a href="/extra-coins">Submit another extra coins</a>
+<p th:text="'Position: ' + ${order.position}" />
+<p th:text="'Count: ' + ${order.value}" />
+<a href="/new-order">Submit another order</a>
 <div th:insert="fragments :: navigation"></div>
 </body>
 
