@@ -9,16 +9,25 @@
 
 <body>
 <header th:fragment="header">
-    <h3>Smart Krab</h3>
-    <span th:if="${#httpServletRequest.remoteUser != null}">
-        <div th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</div>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-    </span>
-    <span th:if="${#httpServletRequest.remoteUser == null}">
-        <a th:href="@{/sign-in}">Sign in</a>
-    </span>
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <h3>Smart Krab</h3>
+            </td>
+            <td style="text-align: right">
+                <span th:if="${#httpServletRequest.remoteUser != null}">
+                <div th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</div>
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Sign Out"/>
+                </form>
+                </span>
+                    <span th:if="${#httpServletRequest.remoteUser == null}">
+                    <a th:href="@{/sign-in}">Sign in</a>
+                </span>
+
+            </td>
+        </tr>
+    </table>
 </header>
 
 <div th:fragment="navigation">
