@@ -12,7 +12,9 @@
 <div th:insert="fragments :: header"></div>
 <h1>Add extra coins</h1>
 <form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
-    <p>Value: <input type="text" th:field="*{value}" /></p>
+    <p>Value (1 -- 5000): <input type="number" th:field="*{value}" />
+        <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>
+    </p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 <div th:insert="fragments :: navigation"></div>
