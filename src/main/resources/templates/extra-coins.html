@@ -11,7 +11,7 @@
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
 
-<div class="ui segment" style="margin: auto">
+<div class="ui segment">
     <h1>Add extra coins</h1>
     <form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
         <p>Value: <input type="text" th:field="*{value}" /></p>

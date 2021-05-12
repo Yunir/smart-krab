@@ -10,10 +10,14 @@
 <body>
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
-<h1>Result</h1>
-<p th:text="'Position: ' + ${order.position}" />
-<p th:text="'Count: ' + ${order.value}" />
-<a href="/new-order">Submit another order</a>
+
+<div class="ui segment">
+    <h1>Result</h1>
+    <p th:text="'Position: ' + ${order.position}" />
+    <p th:text="'Count: ' + ${order.value}" />
+    <a href="/new-order">Submit another order</a>
+</div>
+
 </body>
 
 </html>

@@ -10,24 +10,28 @@
 <body>
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
-<h1>Register new order</h1>
-<form action="#" th:action="@{/new-order}" th:object="${order}" method="post">
-    <p>
-        Position:
-        <select th:field="*{position}">
-<!--            <option value=""> &#45;&#45; </option>-->
-            <option th:each="position : ${positions}"
-                    th:value="${position.name}"
-                    th:utext="${position.name}"/>
-            <!--                    th:value="${position.id}"-->
-        </select>
-    </p>
-    <p>
-        Count: <input type="number" min="1" max="10" th:field="*{value}" />
+
+<div class="ui segment">
+    <h1>Register new order</h1>
+    <form action="#" th:action="@{/new-order}" th:object="${order}" method="post">
+        <p>
+            Position:
+            <select th:field="*{position}">
+                <!--            <option value=""> &#45;&#45; </option>-->
+                <option th:each="position : ${positions}"
+                        th:value="${position.name}"
+                        th:utext="${position.name}"/>
+                <!--                    th:value="${position.id}"-->
+            </select>
+        </p>
+        <p>
+            Count: <input type="number" min="1" max="10" th:field="*{value}" />
         <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>
-    </p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
+        </p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+
 </body>
 
 </html>

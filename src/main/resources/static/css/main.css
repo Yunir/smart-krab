@@ -1,0 +1,7 @@
+.ui.segment {
+    margin: 300px auto auto;
+    background-color: #f2a19e;
+    border-radius: 10px;
+    height: 300px;
+    width: 500px;
+}
