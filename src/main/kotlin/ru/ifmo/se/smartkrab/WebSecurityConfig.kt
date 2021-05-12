@@ -15,7 +15,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         if (http != null) {
             http.authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/", "/css/**", "/img/**", "/js/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/sign-in").permitAll()
