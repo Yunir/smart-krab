@@ -12,10 +12,13 @@
 <div th:insert="fragments :: header"></div>
 
 <div class="ui segment">
-    <h1>Result</h1>
+    <h3 class="ui dividing header">Result</h3>
     <p th:text="'Position: ' + ${order.position}" />
     <p th:text="'Count: ' + ${order.value}" />
-    <a href="/new-order">Submit another order</a>
+    <div class="ui divider"></div>
+    <a class="ui basic fluid button" href="/new-order">
+        Submit another order
+    </a>
 </div>
 
 </body>

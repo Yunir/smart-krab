@@ -12,10 +12,20 @@
 <div th:insert="fragments :: header"></div>
 
 <div class="ui segment">
-    <h1>Add extra coins</h1>
-    <form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
-        <p>Value: <input type="text" th:field="*{value}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    <h3 class="ui dividing header">Add extra coins</h3>
+
+    <form class="ui form" action="#"
+          th:action="@{/extra-coins}"
+          th:object="${extraCoins}" method="post">
+        <div class="field">
+            <label>Extra coins value (1 -- 5000):</label>
+            <input th:field="*{value}" type="number" min="1" max="5000"/>
+            <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>
+        </div>
+        <div class="ui divider"></div>
+        <input class="ui blue fluid button" type="submit" value="Submit" />
+        <div class="ui divider"></div>
+        <input class="ui red fluid button" type="reset" value="Reset" />
     </form>
 </div>
 

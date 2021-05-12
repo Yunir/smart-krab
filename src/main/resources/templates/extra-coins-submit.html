@@ -13,8 +13,14 @@
 
 <div class="ui segment">
   <h3 class="ui dividing header">Result</h3>
-  <p th:text="'Value: ' + ${extraCoins.value}" />
-  <a href="/extra-coins">Submit another extra coins</a>
+  <div class="ui fluid label">
+      <i class="mail icon"></i>
+      <p th:text="'Value: ' + ${extraCoins.value}" />
+  </div>
+  <div class="ui divider"></div>
+  <a class="ui basic fluid button" href="/extra-coins">
+    Submit another extra coins
+  </a>
 </div>
 
 </body>
