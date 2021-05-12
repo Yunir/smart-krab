@@ -10,14 +10,15 @@
 <body>
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
-<h1>Add extra coins</h1>
-<form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
-    <p>Value (1 -- 5000): <input type="number" min="1" max="5000" th:field="*{value}" />
-        <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>
-    </p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
-<div th:insert="fragments :: navigation"></div>
+
+<div class="ui segment" style="margin: auto">
+    <h1>Add extra coins</h1>
+    <form action="#" th:action="@{/extra-coins}" th:object="${extraCoins}" method="post">
+        <p>Value: <input type="text" th:field="*{value}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+
 </body>
 
 </html>
