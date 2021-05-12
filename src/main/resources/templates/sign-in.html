@@ -12,13 +12,15 @@
 
 <div th:insert="fragments :: dependencies"></div>
 
-<div class="ui segment" style="height: 300px; width: 500px;">
+<div class="ui segment" style="height: 350px; width: 500px;">
     <h3 class="ui dividing header">Sign-in to your SmartKrab</h3>
     <div th:if="${param.error}">
         Invalid username and password. Return to the <a th:href="@{/}">Main page</a>.
+        <div class="ui divider"></div>
     </div>
     <div th:if="${param.logout}">
         You have been logged out. Return to the <a th:href="@{/}">Main page</a>.
+        <div class="ui divider"></div>
     </div>
     <form class="ui form" th:action="@{/sign-in}" method="post">
         <div class="fluid field">
