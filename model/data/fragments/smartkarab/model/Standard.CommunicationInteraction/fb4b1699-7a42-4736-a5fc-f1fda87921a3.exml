@@ -1,0 +1,393 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Communication Interaction (Implementation)" version="4">
+  <OBJECT>
+    <ID name="Communication Interaction (Implementation)" mc="Standard.CommunicationInteraction" uid="fb4b1699-7a42-4736-a5fc-f1fda87921a3"/>
+    <PID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[Communication Interaction (Implementation)]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Owned">
+        <OBJECT>
+          <ID name="Повар" mc="Standard.CommunicationNode" uid="ff470ed5-38cd-4739-ae35-79bd967f9cfd"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[Повар]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="76b0afb4-26ec-4f11-83d1-89167b7fdf4e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Отобразить статус прибора" mc="Standard.CommunicationMessage" uid="28380273-9e72-4dcf-a5dd-fe1941c83a64"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Отобразить статус прибора]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="tools-status.html" mc="Standard.CommunicationNode" uid="626b6332-968e-49a4-b7b8-f1e479beb37d"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="11e8676b-e8d8-4f07-8678-2ee10ae36d0d"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="Ввести модель прибора" mc="Standard.CommunicationMessage" uid="f99eb921-803d-476c-a9a0-ba0d2c62de2a"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Ввести модель прибора]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="tools-status.html" mc="Standard.CommunicationNode" uid="626b6332-968e-49a4-b7b8-f1e479beb37d"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="tools-status.html" mc="Standard.CommunicationNode" uid="626b6332-968e-49a4-b7b8-f1e479beb37d"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[tools-status.html]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="8210807c-92da-4135-b21c-7ee90b2a25dc"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Вернуть отчёт о состоянии прибора
+status" mc="Standard.CommunicationMessage" uid="90c689fb-0d1c-40b4-8d9b-29425013dd15"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Вернуть отчёт о состоянии прибора
+status]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsController" mc="Standard.CommunicationNode" uid="892e6e61-5a9b-4294-8589-6617f0c58c82"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="ToolsController" mc="Standard.CommunicationNode" uid="892e6e61-5a9b-4294-8589-6617f0c58c82"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[ToolsController]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="e0152404-ffe8-40ff-8d3b-99d78946877b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Вернуть статус прибора
+tool.status" mc="Standard.CommunicationMessage" uid="628995ab-d47b-47af-ae28-0ae5ce337ce5"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Вернуть статус прибора
+tool.status]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsService" mc="Standard.CommunicationNode" uid="6e116511-80e7-4241-9e45-55c2607a6642"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="52c48648-83ad-4298-8f75-c181ce9cf94e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="Отправить запрос на получение отчёта о состоянии прибора
+checkToolsStatusSubmit(toolName, bindingResult, model)" mc="Standard.CommunicationMessage" uid="2e0dfd69-e0e6-4afe-8f05-f8ed42510fe0"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Отправить запрос на получение отчёта о состоянии прибора
+checkToolsStatusSubmit(toolName, bindingResult, model)]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="tools-status.html" mc="Standard.CommunicationNode" uid="626b6332-968e-49a4-b7b8-f1e479beb37d"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="ToolsService" mc="Standard.CommunicationNode" uid="6e116511-80e7-4241-9e45-55c2607a6642"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[ToolsService]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="b2a3ce0b-8694-4a9d-ba9f-1e3bcc0fb61e"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Провалидировать и обработать данные
+ToolsService.getToolStatus(toolName)" mc="Standard.CommunicationMessage" uid="5493308f-1c81-4bc3-b42c-84c73565d399"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Провалидировать и обработать данные
+ToolsService.getToolStatus(toolName)]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsController" mc="Standard.CommunicationNode" uid="892e6e61-5a9b-4294-8589-6617f0c58c82"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="6ae06b60-9170-44db-afd6-812af7e13c23"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Вернуть найденный прибор
+Tool" mc="Standard.CommunicationMessage" uid="9235f627-9bd6-4fb6-afd5-53891d8aa90d"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Вернуть найденный прибор
+Tool]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsRepository" mc="Standard.CommunicationNode" uid="744df5a9-6d96-4284-84a8-0a880e0fe6ca"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="ToolsRepository" mc="Standard.CommunicationNode" uid="744df5a9-6d96-4284-84a8-0a880e0fe6ca"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[ToolsRepository]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="047199f5-64b2-4035-a111-a34d7f51bf03"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="Отправить запрос на получение выбранного прибора
+ToolsService.find(toolName)" mc="Standard.CommunicationMessage" uid="24e42ff7-280f-430e-a93d-0dddcfc5d33c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Отправить запрос на получение выбранного прибора
+ToolsService.find(toolName)]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsService" mc="Standard.CommunicationNode" uid="6e116511-80e7-4241-9e45-55c2607a6642"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="4dbfc022-1940-45e6-928c-e61c4212a03b"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="EndToStartMessage">
+                    <OBJECT>
+                      <ID name="Вернуть найденную запись" mc="Standard.CommunicationMessage" uid="a9ada591-59d5-47be-9fe0-25b0c8795fef"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Вернуть найденную запись]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="PostgreSQL
+Database" mc="Standard.CommunicationNode" uid="e541c8c8-e0dd-40a7-bbea-4d76b3867a01"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="PostgreSQL
+Database" mc="Standard.CommunicationNode" uid="e541c8c8-e0dd-40a7-bbea-4d76b3867a01"/>
+          <ATTRIBUTES>
+            <ATT name="Selector"></ATT>
+            <ATT name="Name"><![CDATA[PostgreSQL
+Database]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Started">
+              <OBJECT>
+                <ID name=" " mc="Standard.CommunicationChannel" uid="ac300d5d-6ccf-4f0e-b405-1c302f56d877"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[ ]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="StartToEndMessage">
+                    <OBJECT>
+                      <ID name="Найти запись с выбранным названием прибора
+ToolsRepository.findByName(toolName)" mc="Standard.CommunicationMessage" uid="2fac20e1-8521-4f6a-8461-386392e7b168"/>
+                      <ATTRIBUTES>
+                        <ATT name="Argument"></ATT>
+                        <ATT name="Sequence"></ATT>
+                        <ATT name="SortOfMessage">SyncCall</ATT>
+                        <ATT name="Name"><![CDATA[Найти запись с выбранным названием прибора
+ToolsRepository.findByName(toolName)]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                  <LINK relation="End">
+                    <REFOBJ>
+                      <ID name="ToolsRepository" mc="Standard.CommunicationNode" uid="744df5a9-6d96-4284-84a8-0a880e0fe6ca"/>
+                    </REFOBJ>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedCollaboration">
+        <OBJECT>
+          <ID name="locals" mc="Standard.Collaboration" uid="0cd78574-83f7-4b41-9d62-53442fa7ae62"/>
+          <ATTRIBUTES>
+            <ATT name="IsConcurrent">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[locals]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Communication Interaction Communication diagram" mc="Standard.CommunicationDiagram" uid="ce8f3f93-452b-4677-84e1-bf201900a2a3"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
