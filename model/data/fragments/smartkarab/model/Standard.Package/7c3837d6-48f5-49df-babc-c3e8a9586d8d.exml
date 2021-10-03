@@ -17,6 +17,7 @@
         <COMPID name="State Machine" mc="Standard.StateMachine" uid="ff6faf46-b84a-4adf-8a3b-a73f26139991"/>
         <COMPID name="Communication Interaction" mc="Standard.CommunicationInteraction" uid="e48b534b-657c-4bae-8e63-5797a76ba93f"/>
         <COMPID name="Interaction" mc="Standard.Interaction" uid="b47602b5-f14a-4512-8ab1-88f4f4342ffd"/>
+        <COMPID name="State Machine (Implementation)" mc="Standard.StateMachine" uid="9f2f1a0f-8d32-4d74-af24-7b99e54b2c28"/>
       </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="Server" mc="Standard.Package" uid="4e1abe4d-5155-4ab9-bd80-40133a5f64cb"/>
