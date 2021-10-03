@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Backend Server" version="4">
+  <OBJECT>
+    <ID name="Backend Server" mc="Standard.Package" uid="95294e6a-a1cd-436c-8ad5-f851d123cefd"/>
+    <PID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Backend Server]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+      </COMP>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="JDBC" mc="Infrastructure.Dependency" uid="795caa1f-f270-4b21-b6f6-0711ecb69ffe"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[JDBC]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="Database Server" mc="Standard.Package" uid="07558d8a-131e-4ab7-83bb-f7cfd36f7ebb"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

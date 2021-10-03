@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="smartkrab" version="4">
+  <OBJECT>
+    <ID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <PID name="Backend Server" mc="Standard.Package" uid="95294e6a-a1cd-436c-8ad5-f851d123cefd"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[smartkrab]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="214a8955-d963-40ee-8e23-700770cb8d88"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="controller" mc="Standard.Package" uid="468d164a-bce4-4f26-a28f-ed1d849e478f"/>
+        <COMPID name="service" mc="Standard.Package" uid="10b78974-b381-4c82-8f9b-9fd0bab116e5"/>
+        <COMPID name="repository" mc="Standard.Package" uid="c0ed9d8c-0852-4ed0-b2a6-8b50a39d45a6"/>
+        <COMPID name="utils" mc="Standard.Package" uid="545a17d0-a725-4f17-b3eb-4e834fa9dec4"/>
+        <COMPID name="data" mc="Standard.Package" uid="d22a204e-b5d2-4795-9880-66911849291a"/>
+        <COMPID name="config" mc="Standard.Package" uid="793ff392-f501-443c-9be1-a03fa63d9ead"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="smartkrab Class diagram" mc="Standard.ClassDiagram" uid="04eab21d-9caa-4fdd-8b31-a5509558a10b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

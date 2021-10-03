@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Database Server" version="4">
+  <OBJECT>
+    <ID name="Database Server" mc="Standard.Package" uid="07558d8a-131e-4ab7-83bb-f7cfd36f7ebb"/>
+    <PID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Database Server]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="PostgreSQL" mc="Standard.Package" uid="650fe541-0bf9-495a-9c08-116c76f61178"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="service" version="4">
+  <OBJECT>
+    <ID name="service" mc="Standard.Package" uid="10b78974-b381-4c82-8f9b-9fd0bab116e5"/>
+    <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[service]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedImport">
+        <OBJECT>
+          <ID name="ElementImport" mc="Standard.ElementImport" uid="051341b1-34e2-4337-aeef-4500170b1246"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[ElementImport]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="repository" mc="Standard.Package" uid="c0ed9d8c-0852-4ed0-b2a6-8b50a39d45a6"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="ElementImport" mc="Standard.ElementImport" uid="b128ea7c-136e-444f-99ec-743d0614c591"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[ElementImport]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="utils" mc="Standard.Package" uid="545a17d0-a725-4f17-b3eb-4e834fa9dec4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="OrderService" mc="Standard.Class" uid="bff48d95-b8d9-411e-b79d-55e3683b37ef"/>
+        <COMPID name="ReportService" mc="Standard.Class" uid="a857d440-3e6d-406a-9f63-dffa8435a35d"/>
+        <COMPID name="ExtraCoinsService" mc="Standard.Class" uid="b373c975-6c68-41fe-9b0e-ad2ae595cc5e"/>
+        <COMPID name="ToolsService" mc="Standard.Class" uid="a1e4b728-d36b-42be-9116-9816430e102a"/>
+        <COMPID name="UserService" mc="Standard.Class" uid="7a2724d1-d39c-4ab7-9fa5-8e94198ff658"/>
+      </COMP>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Dependency" uid="b316be03-0853-4dee-9a4d-20838b48e79f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="repository" mc="Standard.Package" uid="c0ed9d8c-0852-4ed0-b2a6-8b50a39d45a6"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

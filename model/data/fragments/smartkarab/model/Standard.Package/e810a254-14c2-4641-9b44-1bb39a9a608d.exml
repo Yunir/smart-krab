@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Client" version="4">
+  <OBJECT>
+    <ID name="Client" mc="Standard.Package" uid="e810a254-14c2-4641-9b44-1bb39a9a608d"/>
+    <PID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Client]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="templates" mc="Standard.Package" uid="9e92f1b7-d87e-485f-9d1a-2ad9aa635beb"/>
+        <COMPID name="clientlogic" mc="Standard.Package" uid="50369397-e76c-4e25-a519-e0fd3a31a358"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

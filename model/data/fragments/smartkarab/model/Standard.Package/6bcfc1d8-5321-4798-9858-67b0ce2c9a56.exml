@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Client logic" version="4">
+  <OBJECT>
+    <ID name="Client logic" mc="Standard.Package" uid="6bcfc1d8-5321-4798-9858-67b0ce2c9a56"/>
+    <PID name="Web Server" mc="Standard.Package" uid="df4e0e9e-e045-4e1f-8f9a-5136eae06be7"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Client logic]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="HTTP/HTTPS" mc="Infrastructure.Dependency" uid="496cf184-e340-4c22-8cfa-1f5149f131dc"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[HTTP/HTTPS]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="controller" mc="Standard.Package" uid="468d164a-bce4-4f26-a28f-ed1d849e478f"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

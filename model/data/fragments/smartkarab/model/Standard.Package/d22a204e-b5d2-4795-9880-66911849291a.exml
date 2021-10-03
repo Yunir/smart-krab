@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="data" version="4">
+  <OBJECT>
+    <ID name="data" mc="Standard.Package" uid="d22a204e-b5d2-4795-9880-66911849291a"/>
+    <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[data]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ExtraCoins" mc="Standard.Class" uid="f0243df1-68ea-441a-a4f0-add5ec57b712"/>
+        <COMPID name="Position" mc="Standard.Class" uid="8f42418a-11ed-45a0-9875-37d8c4041959"/>
+        <COMPID name="OrderInfo" mc="Standard.Class" uid="eeb36737-d34b-4f96-bb78-cadf7ce087f7"/>
+        <COMPID name="Tool" mc="Standard.Class" uid="6d56273d-46ca-4748-afa4-f36c56b282bf"/>
+        <COMPID name="User" mc="Standard.Class" uid="9395bc23-78b7-4a5a-87c2-87682e57bc57"/>
+        <OBJECT>
+          <ID name="Role" mc="Standard.Enumeration" uid="3d46647f-5c45-4825-b3fe-b55fe21111c2"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Role]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

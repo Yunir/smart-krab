@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="utils" version="4">
+  <OBJECT>
+    <ID name="utils" mc="Standard.Package" uid="545a17d0-a725-4f17-b3eb-4e834fa9dec4"/>
+    <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[utils]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ReportUtil" mc="Standard.Class" uid="7b12b72a-417a-4df2-9b3a-68531c8f170a"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

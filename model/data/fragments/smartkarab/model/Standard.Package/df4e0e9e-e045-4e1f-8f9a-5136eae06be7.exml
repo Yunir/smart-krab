@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Web Server" version="4">
+  <OBJECT>
+    <ID name="Web Server" mc="Standard.Package" uid="df4e0e9e-e045-4e1f-8f9a-5136eae06be7"/>
+    <PID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Web Server]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Html Templates" mc="Standard.Package" uid="66c61239-3904-420a-ae5c-bbeac20eb996"/>
+        <COMPID name="Client logic" mc="Standard.Package" uid="6bcfc1d8-5321-4798-9858-67b0ce2c9a56"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

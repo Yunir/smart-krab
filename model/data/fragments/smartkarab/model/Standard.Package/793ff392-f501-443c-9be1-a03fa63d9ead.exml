@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="config" version="4">
+  <OBJECT>
+    <ID name="config" mc="Standard.Package" uid="793ff392-f501-443c-9be1-a03fa63d9ead"/>
+    <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[config]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="MvcConfig" mc="Standard.Class" uid="740e9d61-552d-4095-8f1f-c5324db571ec"/>
+        <COMPID name="WebSecurityConfig" mc="Standard.Class" uid="ae8803dd-faab-441e-b6e5-2ef35f27250e"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

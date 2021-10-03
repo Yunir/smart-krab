@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="repository" version="4">
+  <OBJECT>
+    <ID name="repository" mc="Standard.Package" uid="c0ed9d8c-0852-4ed0-b2a6-8b50a39d45a6"/>
+    <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[repository]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedImport">
+        <OBJECT>
+          <ID name="ElementImport" mc="Standard.ElementImport" uid="9083d79b-6c3a-45c9-81d7-c7d572d93610"/>
+          <ATTRIBUTES>
+            <ATT name="Visibility">Private</ATT>
+            <ATT name="Name"><![CDATA[ElementImport]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="ImportedElement">
+              <ID name="data" mc="Standard.Package" uid="d22a204e-b5d2-4795-9880-66911849291a"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="OrderRepository" mc="Standard.Interface" uid="a58b39e6-f8ad-4c14-b202-f1ba300e9ca7"/>
+        <COMPID name="ExtraCoinsRepository" mc="Standard.Interface" uid="98f07d13-30f9-4351-bd70-8cd097eca5bd"/>
+        <COMPID name="ToolsRepository" mc="Standard.Interface" uid="ecf66bb8-1db8-46d0-96d1-dce01d212e8c"/>
+        <COMPID name="UserRepository" mc="Standard.Interface" uid="43162b52-9de7-4e34-a5f6-8fcf32881cf7"/>
+      </COMP>
+      <COMP relation="DependsOnDependency">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Dependency" uid="2922e095-f6f8-479e-a4a0-b449fec10a9c"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="DependsOn">
+              <ID name="data" mc="Standard.Package" uid="d22a204e-b5d2-4795-9880-66911849291a"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

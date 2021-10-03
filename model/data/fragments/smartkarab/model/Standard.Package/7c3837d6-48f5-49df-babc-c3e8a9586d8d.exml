@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SmartKrabSystem" version="4">
+  <OBJECT>
+    <ID name="SmartKrabSystem" mc="Standard.Package" uid="7c3837d6-48f5-49df-babc-c3e8a9586d8d"/>
+    <PID name="smartkarab" mc="Standard.Project" uid="3723b108-cbc0-40dc-b4a4-53cf472eb334"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[SmartKrabSystem]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="State Machine" mc="Standard.StateMachine" uid="ff6faf46-b84a-4adf-8a3b-a73f26139991"/>
+        <COMPID name="Communication Interaction" mc="Standard.CommunicationInteraction" uid="e48b534b-657c-4bae-8e63-5797a76ba93f"/>
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="b47602b5-f14a-4512-8ab1-88f4f4342ffd"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Server" mc="Standard.Package" uid="4e1abe4d-5155-4ab9-bd80-40133a5f64cb"/>
+        <COMPID name="Client" mc="Standard.Package" uid="e810a254-14c2-4641-9b44-1bb39a9a608d"/>
+        <COMPID name="Web Server" mc="Standard.Package" uid="df4e0e9e-e045-4e1f-8f9a-5136eae06be7"/>
+        <COMPID name="Backend Server" mc="Standard.Package" uid="95294e6a-a1cd-436c-8ad5-f851d123cefd"/>
+        <COMPID name="Database Server" mc="Standard.Package" uid="07558d8a-131e-4ab7-83bb-f7cfd36f7ebb"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="SmartKrabSystem (PackageContentStructureDiagramTemplate)" mc="Standard.ClassDiagram" uid="5e4bcf69-2f65-4f8a-9579-c1272cd7b2a5"/>
+        <COMPID name="SmartKrabSystem Deployment diagram" mc="Standard.DeploymentDiagram" uid="0ac244cf-480e-4ccc-be2a-bd3a48b4dd7f"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

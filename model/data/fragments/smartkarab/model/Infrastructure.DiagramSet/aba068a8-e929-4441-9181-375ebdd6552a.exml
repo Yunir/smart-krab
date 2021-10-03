@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="smartkarab" version="4">
+  <OBJECT>
+    <ID name="smartkarab" mc="Infrastructure.DiagramSet" uid="aba068a8-e929-4441-9181-375ebdd6552a"/>
+    <PID name="smartkarab" mc="Standard.Project" uid="3723b108-cbc0-40dc-b4a4-53cf472eb334"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[smartkarab]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
