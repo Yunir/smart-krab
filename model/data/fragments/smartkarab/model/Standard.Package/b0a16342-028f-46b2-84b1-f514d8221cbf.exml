@@ -14,8 +14,9 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedBehavior">
-        <COMPID name="Activity" mc="Standard.Activity" uid="214a8955-d963-40ee-8e23-700770cb8d88"/>
-        <COMPID name="Activity" mc="Standard.Activity" uid="6ff998f6-51bb-4708-ad04-14e52f384fce"/>
+        <COMPID name="Activity (Abstract)" mc="Standard.Activity" uid="214a8955-d963-40ee-8e23-700770cb8d88"/>
+        <COMPID name="Activity (Implementation)" mc="Standard.Activity" uid="6ff998f6-51bb-4708-ad04-14e52f384fce"/>
+        <COMPID name="Activity" mc="Standard.Activity" uid="15463514-13bd-45fb-9f1a-fd78ab1b2acc"/>
       </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="controller" mc="Standard.Package" uid="468d164a-bce4-4f26-a28f-ed1d849e478f"/>

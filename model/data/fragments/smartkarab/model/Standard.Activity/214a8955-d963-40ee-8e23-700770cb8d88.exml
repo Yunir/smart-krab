@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Activity" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Activity (Abstract)" version="4">
   <OBJECT>
-    <ID name="Activity" mc="Standard.Activity" uid="214a8955-d963-40ee-8e23-700770cb8d88"/>
+    <ID name="Activity (Abstract)" mc="Standard.Activity" uid="214a8955-d963-40ee-8e23-700770cb8d88"/>
     <PID name="smartkrab" mc="Standard.Package" uid="b0a16342-028f-46b2-84b1-f514d8221cbf"/>
     <ATTRIBUTES>
       <ATT name="IsSingleExecution">false</ATT>
       <ATT name="IsReadOnly">false</ATT>
       <ATT name="IsReentrant">false</ATT>
-      <ATT name="Name"><![CDATA[Activity]]></ATT>
+      <ATT name="Name"><![CDATA[Activity (Abstract)]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
@@ -41,7 +41,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Выбирает заказ (GUI)" mc="Standard.OpaqueAction" uid="8b6d4e6c-148d-4531-bd39-00ded25ecd4c"/>
+                            <ID name="Выбирает заказ для готовки" mc="Standard.OpaqueAction" uid="8b6d4e6c-148d-4531-bd39-00ded25ecd4c"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -50,18 +50,18 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Выбирает заказ (GUI)" mc="Standard.OpaqueAction" uid="8b6d4e6c-148d-4531-bd39-00ded25ecd4c"/>
+                <ID name="Выбирает заказ для готовки" mc="Standard.OpaqueAction" uid="8b6d4e6c-148d-4531-bd39-00ded25ecd4c"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Выбирает заказ (GUI)]]></ATT>
+                  <ATT name="Name"><![CDATA[Выбирает заказ для готовки]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Outgoing">
                     <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="89ad4879-45fc-4313-bbc3-6674d428faa2"/>
+                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="2128f2d3-97b7-4aa7-9942-591cd4d7dca0"/>
                       <ATTRIBUTES>
                         <ATT name="Guard"></ATT>
                         <ATT name="Weight"><![CDATA[1]]></ATT>
@@ -71,7 +71,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Выбирает статус заказа &quot;inProgress&quot; (GUI)" mc="Standard.OpaqueAction" uid="6319d51f-9d13-4cc8-b62b-cb8c378299f4"/>
+                            <ID name="Оповещает систему о выбранном заказе" mc="Standard.OpaqueAction" uid="f3c760f4-35c0-4344-9968-b7254216364b"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -80,42 +80,12 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Выбирает статус заказа &quot;inProgress&quot; (GUI)" mc="Standard.OpaqueAction" uid="6319d51f-9d13-4cc8-b62b-cb8c378299f4"/>
+                <ID name="Оповещает систему о выбранном заказе" mc="Standard.OpaqueAction" uid="f3c760f4-35c0-4344-9968-b7254216364b"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Выбирает статус заказа "inProgress" (GUI)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="d37f57d9-43c2-4c04-a46e-1253a7a888f0"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Отправляет запрос на изменение статуса заказа (POST, orderInfo)" mc="Standard.OpaqueAction" uid="f3c760f4-35c0-4344-9968-b7254216364b"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Отправляет запрос на изменение статуса заказа (POST, orderInfo)" mc="Standard.OpaqueAction" uid="f3c760f4-35c0-4344-9968-b7254216364b"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Отправляет запрос на изменение статуса заказа (POST, orderInfo)]]></ATT>
+                  <ATT name="Name"><![CDATA[Оповещает систему о выбранном заказе]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -131,7 +101,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Получает данные заказа (OrderController)" mc="Standard.OpaqueAction" uid="75fef7ad-f2e2-476a-b2b2-93cb0a72a891"/>
+                            <ID name="Получает состояние заказа" mc="Standard.OpaqueAction" uid="75fef7ad-f2e2-476a-b2b2-93cb0a72a891"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -140,18 +110,18 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Получает подтверждение (GUI)" mc="Standard.OpaqueAction" uid="2988312c-6bd8-4644-9418-2f3fbf90d7be"/>
+                <ID name="Готовит блюдо" mc="Standard.OpaqueAction" uid="8baa8837-3b96-4bbc-b5a7-a87939ea5122"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Получает подтверждение (GUI)]]></ATT>
+                  <ATT name="Name"><![CDATA[Готовит блюдо]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Outgoing">
                     <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="a6ab29ec-36b5-440d-8da3-1914785962ed"/>
+                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="2b4f974d-2b34-4068-ac8d-9c96aa18c444"/>
                       <ATTRIBUTES>
                         <ATT name="Guard"></ATT>
                         <ATT name="Weight"><![CDATA[1]]></ATT>
@@ -161,7 +131,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Готовит блюдо (real life action)" mc="Standard.OpaqueAction" uid="8baa8837-3b96-4bbc-b5a7-a87939ea5122"/>
+                            <ID name="Оповещает систему о приготовленном заказе" mc="Standard.OpaqueAction" uid="ff74c62d-4dde-4e12-8953-11d05426fb6b"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -170,102 +140,12 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Готовит блюдо (real life action)" mc="Standard.OpaqueAction" uid="8baa8837-3b96-4bbc-b5a7-a87939ea5122"/>
+                <ID name="Оповещает систему о приготовленном заказе" mc="Standard.OpaqueAction" uid="ff74c62d-4dde-4e12-8953-11d05426fb6b"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Готовит блюдо (real life action)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="c4b5bbe6-dba9-40e9-bc8d-a46aca1453b8"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Выбирает заказ (GUI)" mc="Standard.OpaqueAction" uid="56df14fc-1523-4732-8b4a-eec2c25bc287"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Выбирает заказ (GUI)" mc="Standard.OpaqueAction" uid="56df14fc-1523-4732-8b4a-eec2c25bc287"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Выбирает заказ (GUI)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="94dad648-46b3-48f4-ad81-bca558b489f2"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Выбирает статус заказа &quot;finished&quot; (GUI)" mc="Standard.OpaqueAction" uid="ad7f0b09-d2d9-44f0-b799-1971343fc438"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Выбирает статус заказа &quot;finished&quot; (GUI)" mc="Standard.OpaqueAction" uid="ad7f0b09-d2d9-44f0-b799-1971343fc438"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Выбирает статус заказа "finished" (GUI)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="e777bace-a1ea-4283-a272-c8a75f246d2b"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Отправляет запрос на изменение статуса заказа (POST, orderInfo)" mc="Standard.OpaqueAction" uid="ff74c62d-4dde-4e12-8953-11d05426fb6b"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Отправляет запрос на изменение статуса заказа (POST, orderInfo)" mc="Standard.OpaqueAction" uid="ff74c62d-4dde-4e12-8953-11d05426fb6b"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Отправляет запрос на изменение статуса заказа (POST, orderInfo)]]></ATT>
+                  <ATT name="Name"><![CDATA[Оповещает систему о приготовленном заказе]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -281,7 +161,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Получает данные заказа (OrderController)" mc="Standard.OpaqueAction" uid="2c96e3bb-ac1f-49b6-b451-a6877277026e"/>
+                            <ID name="Получает состояние заказа" mc="Standard.OpaqueAction" uid="2c96e3bb-ac1f-49b6-b451-a6877277026e"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -290,12 +170,12 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Получает подтверждение (GUI)" mc="Standard.OpaqueAction" uid="19b4a22f-460a-4b9f-8a3d-02dd0125ff44"/>
+                <ID name="Передает заказ на стол выдачи" mc="Standard.OpaqueAction" uid="19b4a22f-460a-4b9f-8a3d-02dd0125ff44"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Получает подтверждение (GUI)]]></ATT>
+                  <ATT name="Name"><![CDATA[Передает заказ на стол выдачи]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -341,18 +221,18 @@
           <DEPENDENCIES>
             <COMP relation="ContainedNode">
               <OBJECT>
-                <ID name="Получает данные заказа (OrderController)" mc="Standard.OpaqueAction" uid="75fef7ad-f2e2-476a-b2b2-93cb0a72a891"/>
+                <ID name="Получает состояние заказа" mc="Standard.OpaqueAction" uid="75fef7ad-f2e2-476a-b2b2-93cb0a72a891"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Получает данные заказа (OrderController)]]></ATT>
+                  <ATT name="Name"><![CDATA[Получает состояние заказа]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Outgoing">
                     <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="b2029a5d-bf5a-4c8e-84f8-5da84ab039ed"/>
+                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="b6a9309d-47ed-4d1a-a222-100a6d25b60b"/>
                       <ATTRIBUTES>
                         <ATT name="Guard"></ATT>
                         <ATT name="Weight"><![CDATA[1]]></ATT>
@@ -362,7 +242,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Обновляет статус заказа (OrderService)" mc="Standard.OpaqueAction" uid="6a3569ef-7b69-43e0-baa5-79d89f0a2927"/>
+                            <ID name="Подтверждает, что заказ принят к готовке" mc="Standard.OpaqueAction" uid="c3628949-1800-4ecc-a618-711c7c1212a3"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -371,18 +251,18 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Обновляет статус заказа (OrderService)" mc="Standard.OpaqueAction" uid="6a3569ef-7b69-43e0-baa5-79d89f0a2927"/>
+                <ID name="Подтверждает, что заказ принят к готовке" mc="Standard.OpaqueAction" uid="c3628949-1800-4ecc-a618-711c7c1212a3"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Обновляет статус заказа (OrderService)]]></ATT>
+                  <ATT name="Name"><![CDATA[Подтверждает, что заказ принят к готовке]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Outgoing">
                     <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="1a98d0d0-6d15-44b2-96ac-66bbdd852adf"/>
+                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="15892cc8-8306-437c-818c-d9ab3e68d28f"/>
                       <ATTRIBUTES>
                         <ATT name="Guard"></ATT>
                         <ATT name="Weight"><![CDATA[1]]></ATT>
@@ -392,7 +272,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Сохраняет данные в базу (OrderRepository)" mc="Standard.OpaqueAction" uid="c298bc80-f28f-4d49-b95a-180d212922d2"/>
+                            <ID name="Готовит блюдо" mc="Standard.OpaqueAction" uid="8baa8837-3b96-4bbc-b5a7-a87939ea5122"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -401,72 +281,12 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Сохраняет данные в базу (OrderRepository)" mc="Standard.OpaqueAction" uid="c298bc80-f28f-4d49-b95a-180d212922d2"/>
+                <ID name="Получает состояние заказа" mc="Standard.OpaqueAction" uid="2c96e3bb-ac1f-49b6-b451-a6877277026e"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Сохраняет данные в базу (OrderRepository)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="071c7a7e-2961-4761-b378-f92116b6e6e6"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Передаёт подтверждение (OrderController)" mc="Standard.OpaqueAction" uid="c3628949-1800-4ecc-a618-711c7c1212a3"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Передаёт подтверждение (OrderController)" mc="Standard.OpaqueAction" uid="c3628949-1800-4ecc-a618-711c7c1212a3"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Передаёт подтверждение (OrderController)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="fa6cc4ac-b456-4393-8cb2-7a7b52a0fa2a"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Получает подтверждение (GUI)" mc="Standard.OpaqueAction" uid="2988312c-6bd8-4644-9418-2f3fbf90d7be"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Получает данные заказа (OrderController)" mc="Standard.OpaqueAction" uid="2c96e3bb-ac1f-49b6-b451-a6877277026e"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Получает данные заказа (OrderController)]]></ATT>
+                  <ATT name="Name"><![CDATA[Получает состояние заказа]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
@@ -482,7 +302,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Обновляет статус заказа (OrderService)" mc="Standard.OpaqueAction" uid="a9d80560-3eba-4eae-9290-e8fdd45719c2"/>
+                            <ID name="Подтверждает, что заказ приготовлен" mc="Standard.OpaqueAction" uid="a9d80560-3eba-4eae-9290-e8fdd45719c2"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
@@ -491,18 +311,18 @@
                 </DEPENDENCIES>
               </OBJECT>
               <OBJECT>
-                <ID name="Обновляет статус заказа (OrderService)" mc="Standard.OpaqueAction" uid="a9d80560-3eba-4eae-9290-e8fdd45719c2"/>
+                <ID name="Подтверждает, что заказ приготовлен" mc="Standard.OpaqueAction" uid="a9d80560-3eba-4eae-9290-e8fdd45719c2"/>
                 <ATTRIBUTES>
                   <ATT name="Body"></ATT>
                   <ATT name="IsMultipleInstance">false</ATT>
                   <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Обновляет статус заказа (OrderService)]]></ATT>
+                  <ATT name="Name"><![CDATA[Подтверждает, что заказ приготовлен]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Outgoing">
                     <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="79561654-22ab-4a61-9363-05ca0a038f9c"/>
+                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="489a87e5-84dc-42e4-a6e3-d728f0b0a4f3"/>
                       <ATTRIBUTES>
                         <ATT name="Guard"></ATT>
                         <ATT name="Weight"><![CDATA[1]]></ATT>
@@ -512,67 +332,7 @@
                       <DEPENDENCIES>
                         <LINK relation="Target">
                           <REFOBJ>
-                            <ID name="Сохраняет данные в базу (OrderRepository)" mc="Standard.OpaqueAction" uid="a6956365-bde3-4100-8c19-6f4c44b676c7"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Сохраняет данные в базу (OrderRepository)" mc="Standard.OpaqueAction" uid="a6956365-bde3-4100-8c19-6f4c44b676c7"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Сохраняет данные в базу (OrderRepository)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="25f589d5-bb57-4bbb-bd94-888729386827"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Передаёт подтверждение (OrderController)" mc="Standard.OpaqueAction" uid="5213dcf3-b559-4e7c-9117-e7ef6e262d9b"/>
-                          </REFOBJ>
-                        </LINK>
-                      </DEPENDENCIES>
-                    </OBJECT>
-                  </COMP>
-                </DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="Передаёт подтверждение (OrderController)" mc="Standard.OpaqueAction" uid="5213dcf3-b559-4e7c-9117-e7ef6e262d9b"/>
-                <ATTRIBUTES>
-                  <ATT name="Body"></ATT>
-                  <ATT name="IsMultipleInstance">false</ATT>
-                  <ATT name="IsCompensation">false</ATT>
-                  <ATT name="Name"><![CDATA[Передаёт подтверждение (OrderController)]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES>
-                  <COMP relation="Outgoing">
-                    <OBJECT>
-                      <ID name="ControlFlow" mc="Standard.ControlFlow" uid="82bc935d-718a-46ae-a93c-e59f47b93105"/>
-                      <ATTRIBUTES>
-                        <ATT name="Guard"></ATT>
-                        <ATT name="Weight"><![CDATA[1]]></ATT>
-                        <ATT name="Name"><![CDATA[ControlFlow]]></ATT>
-                        <ATT name="status">1970354901745664</ATT>
-                      </ATTRIBUTES>
-                      <DEPENDENCIES>
-                        <LINK relation="Target">
-                          <REFOBJ>
-                            <ID name="Получает подтверждение (GUI)" mc="Standard.OpaqueAction" uid="19b4a22f-460a-4b9f-8a3d-02dd0125ff44"/>
+                            <ID name="Передает заказ на стол выдачи" mc="Standard.OpaqueAction" uid="19b4a22f-460a-4b9f-8a3d-02dd0125ff44"/>
                           </REFOBJ>
                         </LINK>
                       </DEPENDENCIES>
