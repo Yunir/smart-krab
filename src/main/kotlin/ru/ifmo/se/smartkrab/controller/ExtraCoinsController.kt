@@ -1,4 +1,4 @@
-package ru.ifmo.se.smartkrab
+package ru.ifmo.se.smartkrab.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -8,17 +8,15 @@ import org.springframework.web.bind.annotation.ModelAttribute
 
 import org.springframework.web.bind.annotation.PostMapping
 import ru.ifmo.se.smartkrab.data.ExtraCoins
-import ru.ifmo.se.smartkrab.data.ExtraCoinsRepository
+import ru.ifmo.se.smartkrab.service.ExtraCoinsService
 import javax.validation.Valid
 
-
 @Controller
-class ExtraCoinsController(val ecRepo: ExtraCoinsRepository) {
+class ExtraCoinsController(val ecService: ExtraCoinsService) {
 
     @GetMapping("/extra-coins")
     fun extraCoinsForm(model: Model): String {
-        model.addAttribute("extraCoins", ExtraCoins())
-        return "extra-coins"
+        return ecService.getExtraCoins(model)
     }
 
     @PostMapping("/extra-coins")
@@ -26,18 +24,6 @@ class ExtraCoinsController(val ecRepo: ExtraCoinsRepository) {
         if (bindingResult.hasErrors()) {
             return "extra-coins"
         }
-
-        model.addAttribute("extraCoins", extraCoins)
-
-        ecRepo.save(extraCoins)
-        // fetch coins
-        println("ExtraCoins found with findAll():")
-        println("-------------------------------")
-        for (e in ecRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
-
-        return "extra-coins-submit"
+        return ecService.saveExtraCoins(extraCoins, model)
     }
 }

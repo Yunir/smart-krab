@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import ru.ifmo.se.smartkrab.data.ExtraCoins
-import ru.ifmo.se.smartkrab.data.ExtraCoinsRepository
+import ru.ifmo.se.smartkrab.repository.ExtraCoinsRepository
 import ru.ifmo.se.smartkrab.data.OrderInfo
-import ru.ifmo.se.smartkrab.data.OrderRepository
+import ru.ifmo.se.smartkrab.repository.OrderRepository
 
 
 @SpringBootApplication
