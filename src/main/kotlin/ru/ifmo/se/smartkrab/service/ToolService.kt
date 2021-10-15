@@ -35,4 +35,23 @@ class ToolService(val tRepo: ToolRepository) {
         return "add-new-tool-submit"
     }
 
+    fun deleteTool(name: String): String {
+        val tool = tRepo.findByName(name)
+        tRepo.delete(tool)
+
+        println("Deleted tool:")
+        println("-------------------------------")
+        println(tool)
+        println("")
+
+        println("Tools found with findAll():")
+        println("-------------------------------")
+        for (e in tRepo.findAll()) {
+            println(e.toString())
+        }
+        println("")
+
+        return "tools-status"
+    }
+
 }

@@ -3,10 +3,7 @@ package ru.ifmo.se.smartkrab.controller
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.ModelAttribute
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.*
 import ru.ifmo.se.smartkrab.data.Tool
 import ru.ifmo.se.smartkrab.service.ToolService
 import javax.validation.Valid
@@ -25,6 +22,11 @@ class ToolController(val tService: ToolService) {
             return "add-new-tool"
         }
         return tService.addNewTool(model, tool)
+    }
+
+    @DeleteMapping("/delete-tool/{name}")
+    fun deleteTool(@PathVariable name: String): String {
+        return tService.deleteTool(name)
     }
 
 }
