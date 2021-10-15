@@ -12,7 +12,7 @@ class UserService(val uRepo: UserRepository) {
         model.addAttribute("user", user)
 
         uRepo.save(user)
-        // fetch coins
+
         println("Users found with findAll():")
         println("-------------------------------")
         for (e in uRepo.findAll()) {

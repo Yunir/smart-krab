@@ -17,7 +17,7 @@ class ExtraCoinsService(val ecRepo: ExtraCoinsRepository) {
         model.addAttribute("extraCoins", extraCoins)
 
         ecRepo.save(extraCoins)
-        // fetch coins
+
         println("ExtraCoins found with findAll():")
         println("-------------------------------")
         for (e in ecRepo.findAll()) {

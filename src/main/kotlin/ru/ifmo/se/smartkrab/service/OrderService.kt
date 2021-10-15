@@ -25,7 +25,7 @@ class OrderService(val oRepo: OrderRepository) {
         model.addAttribute("order", order)
 
         oRepo.save(order)
-        // fetch coins
+
         println("Orders found with findAll():")
         println("-------------------------------")
         for (e in oRepo.findAll()) {
