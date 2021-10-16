@@ -35,4 +35,19 @@ class OrderService(val oRepo: OrderRepository) {
 
         return "new-order-submit"
     }
+
+    fun updateOrderStatus(model: Model, id: Long, status: String): String {
+        val orderInfo = oRepo.findById(id).get()
+        orderInfo.status = status
+        model.addAttribute("order", orderInfo)
+
+        oRepo.save(orderInfo)
+
+        println("Updated order:")
+        println("-------------------------------")
+        println(orderInfo)
+        println("")
+
+        return "cooking"
+    }
 }
