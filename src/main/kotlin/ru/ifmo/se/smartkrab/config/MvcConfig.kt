@@ -5,7 +5,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
-class MvcConfig: WebMvcConfigurer {
+class MvcConfig : WebMvcConfigurer {
     override fun addViewControllers(registry: ViewControllerRegistry) {
         registry.addViewController("/").setViewName("home")
         registry.addViewController("/add-user").setViewName("add-user")
@@ -17,5 +17,6 @@ class MvcConfig: WebMvcConfigurer {
         registry.addViewController("/add-new-tool").setViewName("add-new-tool")
         registry.addViewController("/tools-status").setViewName("tools-status")
         registry.addViewController("/antiplankton").setViewName("antiplankton")
+        registry.addViewController("/access-denied").setViewName("access-denied")
     }
 }

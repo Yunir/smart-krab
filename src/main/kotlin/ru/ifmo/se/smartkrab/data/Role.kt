@@ -1,5 +1,5 @@
 package ru.ifmo.se.smartkrab.data
 
 enum class Role {
-    OWNER, CHEF, CASHIER
+    ROLE_OWNER, ROLE_CHEF, ROLE_CASHIER
 }
