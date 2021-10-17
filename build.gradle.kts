@@ -30,6 +30,7 @@ dependencies {
 	implementation("org.postgresql:postgresql:42.2.5")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
 }
 
 allOpen {
