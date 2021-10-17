@@ -18,7 +18,7 @@ class OrderInfo (
     var value: Int? = 0,
     var status: String = "registered",
     var addedAt: LocalDateTime = LocalDateTime.now(),
-    @Id @GeneratedValue(strategy = GenerationType.AUTO) var id: Long? = null
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null
 ) {
     override fun toString(): String {
         return "$id - $addedAt: $value x $position. Status: $status"

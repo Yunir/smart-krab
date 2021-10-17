@@ -1,0 +1,12 @@
+services:
+  krab:
+    image: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    container_name: krab
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: krab
+      POSTGRES_PASSWORD: krab
+      POSTGRES_DATABASE: krab

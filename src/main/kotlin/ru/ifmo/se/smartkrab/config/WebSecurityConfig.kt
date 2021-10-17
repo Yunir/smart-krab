@@ -28,7 +28,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
                     .and()
                     .logout().permitAll()
                     .and()
-                    .exceptionHandling().accessDeniedPage("/access-denied");
+                    .exceptionHandling().accessDeniedPage("/access-denied")
         }
     }
 
@@ -45,7 +45,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth.jdbcAuthentication().dataSource(dataSource)
                 .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("select login,password,enabled from user where login=?")
-                .authoritiesByUsernameQuery("select login, role from user where login=?")
+                .usersByUsernameQuery("select login,password,enabled from krab_user where login=?")
+                .authoritiesByUsernameQuery("select login, role from krab_user where login=?")
     }
 }

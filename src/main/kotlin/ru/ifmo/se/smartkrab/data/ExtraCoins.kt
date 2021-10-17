@@ -15,7 +15,7 @@ class ExtraCoins(
     @field:Max(5000, message = "value should be less than 5000")
     var value: Int? = 0,
     var addedAt: LocalDateTime = LocalDateTime.now(),
-    @Id @GeneratedValue(strategy = GenerationType.AUTO) var id: Long? = null
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null
 ) {
     override fun toString(): String {
         return "$id - $addedAt: $value$"

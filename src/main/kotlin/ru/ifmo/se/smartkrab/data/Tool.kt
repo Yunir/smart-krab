@@ -16,7 +16,7 @@ class Tool(
         @field:Min(1, message = "value should be greater than 1")
         @field:Max(1000, message = "value should be less than 1000")
         var status: Int? = 1000,
-        @Id @GeneratedValue(strategy = GenerationType.AUTO) var id: Long? = null
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null
 ) {
     override fun toString(): String {
         return "$id - $name. Status: $status"
