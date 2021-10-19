@@ -8,7 +8,12 @@ import ru.ifmo.se.smartkrab.repository.ToolRepository
 @Service
 class ToolService(val tRepo: ToolRepository) {
 
-    fun getTool(model: Model, name: String): String {
+    fun getTool(model: Model): String {
+        model.addAttribute("tool", Tool(""))
+        return "new-tool"
+    }
+
+    fun getToolByName(model: Model, name: String): String {
         val tool = tRepo.findByName(name)
         model.addAttribute("tool", tool)
 
@@ -32,7 +37,7 @@ class ToolService(val tRepo: ToolRepository) {
         }
         println("")
 
-        return "add-new-tool-submit"
+        return "new-tool-submit"
     }
 
     fun deleteTool(name: String): String {

@@ -4,7 +4,7 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
-    <title>Add new tool</title>
+    <title>Add new tool submit</title>
 </head>
 
 <body>
@@ -12,7 +12,14 @@
 <div th:insert="fragments :: header"></div>
 
 <div class="ui segment">
-    <h1>Add new tool</h1>
+    <h3 class="ui dividing header">Result</h3>
+    <div class="ui fluid label" style="text-align: center">
+        <span th:text="'Tool: name - ' + ${tool.name} + ', status - ' + ${tool.status}"></span>
+    </div>
+    <div class="ui divider"></div>
+    <a class="ui basic fluid button" href="/new-tool">
+        Submit another tool
+    </a>
 </div>
 
 </body>

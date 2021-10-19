@@ -11,15 +11,20 @@ import javax.validation.Valid
 @Controller
 class ToolController(val tService: ToolService) {
 
+    @GetMapping("/new-tool")
+    fun getTool(model: Model): String {
+        return tService.getTool(model)
+    }
+
     @GetMapping("/get-tool/{name}")
-    fun getTool(@PathVariable name: String, model: Model): String {
-        return tService.getTool(model, name)
+    fun getToolByName(@PathVariable name: String, model: Model): String {
+        return tService.getToolByName(model, name)
     }
 
     @PostMapping("/new-tool")
     fun newToolSubmit(@ModelAttribute("tool") @Valid tool: Tool, bindingResult: BindingResult, model: Model): String {
         if (bindingResult.hasErrors()) {
-            return "add-new-tool"
+            return "new-tool"
         }
         return tService.addNewTool(model, tool)
     }

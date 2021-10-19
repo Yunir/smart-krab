@@ -14,7 +14,7 @@ class MvcConfig : WebMvcConfigurer {
         registry.addViewController("/daily-report").setViewName("daily-report")
         registry.addViewController("/new-order").setViewName("new-order")
         registry.addViewController("/cooking").setViewName("cooking")
-        registry.addViewController("/add-new-tool").setViewName("add-new-tool")
+        registry.addViewController("/new-tool").setViewName("new-tool")
         registry.addViewController("/tools-status").setViewName("tools-status")
         registry.addViewController("/antiplankton").setViewName("antiplankton")
         registry.addViewController("/access-denied").setViewName("access-denied")
