@@ -17,6 +17,11 @@ class OrderController(val oService: OrderService) {
         return oService.getOrder(model)
     }
 
+    @GetMapping("/cooking")
+    fun getExistingOrders(model: Model): String {
+        return oService.getExistingOrders(model)
+    }
+
     @PostMapping("/new-order")
     fun newOrderSubmit(@ModelAttribute("order") @Valid order: OrderInfo, bindingResult: BindingResult, model: Model): String {
         if (bindingResult.hasErrors()) {
@@ -25,8 +30,8 @@ class OrderController(val oService: OrderService) {
         return oService.addNewOrder(model, order)
     }
 
-    @PutMapping("/order-status/{id}/{status}")
-    fun updateOrderStatus(@PathVariable id: Long, @PathVariable status: String, model: Model): String {
-        return oService.updateOrderStatus(model, id, status)
+    @PutMapping("/order-status")
+    fun updateOrderStatus(@ModelAttribute("order") order: OrderInfo, model: Model): String {
+        return oService.updateOrderStatus(model, order.id, order.status)
     }
 }

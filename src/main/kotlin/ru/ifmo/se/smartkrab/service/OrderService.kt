@@ -21,6 +21,12 @@ class OrderService(val oRepo: OrderRepository) {
         return "new-order"
     }
 
+    fun getExistingOrders(model: Model): String {
+        model.addAttribute("order", OrderInfo())
+        model.addAttribute("orders", oRepo.findAll())
+        return "cooking"
+    }
+
     fun addNewOrder(model: Model, order: OrderInfo): String {
         model.addAttribute("order", order)
 
@@ -36,8 +42,8 @@ class OrderService(val oRepo: OrderRepository) {
         return "new-order-submit"
     }
 
-    fun updateOrderStatus(model: Model, id: Long, status: String): String {
-        val orderInfo = oRepo.findById(id).get()
+    fun updateOrderStatus(model: Model, id: Long?, status: String): String {
+        val orderInfo = oRepo.findById(id!!).get()
         orderInfo.status = status
         model.addAttribute("order", orderInfo)
 
@@ -48,6 +54,6 @@ class OrderService(val oRepo: OrderRepository) {
         println(orderInfo)
         println("")
 
-        return "cooking"
+        return "cooking-submit"
     }
 }
