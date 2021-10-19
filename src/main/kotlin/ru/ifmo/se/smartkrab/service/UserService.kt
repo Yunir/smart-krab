@@ -1,5 +1,6 @@
 package ru.ifmo.se.smartkrab.service
 
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.Role
@@ -7,7 +8,7 @@ import ru.ifmo.se.smartkrab.data.User
 import ru.ifmo.se.smartkrab.repository.UserRepository
 
 @Service
-class UserService(val uRepo: UserRepository) {
+class UserService(val uRepo: UserRepository, val passwordEncoder: PasswordEncoder) {
 
     fun getUser(model: Model): String {
         model.addAttribute("user", User("", "", Role.ROLE_CHEF))
@@ -16,7 +17,7 @@ class UserService(val uRepo: UserRepository) {
 
     fun addNewUser(model: Model, user: User): String {
         model.addAttribute("user", user)
-
+        user.password = passwordEncoder.encode(user.password)
         uRepo.save(user)
 
         println("Users found with findAll():")
