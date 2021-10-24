@@ -71,6 +71,8 @@ class SmartKrabApplication {
 
             passwordEncoder.encode("test")?.let { User(login = "test", password = it, role = Role.ROLE_CASHIER, enabled = true) }?.let { uRepo.save(it) }
 
+            passwordEncoder.encode("chef")?.let { User(login = "chef", password = it, role = Role.ROLE_CHEF, enabled = true) }?.let { uRepo.save(it) }
+
             println("Users found with findAll():")
             println("-------------------------------")
             for (user in uRepo.findAll()) {
