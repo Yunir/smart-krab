@@ -22,7 +22,7 @@ class ToolService(val tRepo: ToolRepository) {
         println(tool)
         println("")
 
-        return "tools-status"
+        return "delete-tool"
     }
 
     fun addNewTool(model: Model, tool: Tool): String {
@@ -38,6 +38,12 @@ class ToolService(val tRepo: ToolRepository) {
         println("")
 
         return "new-tool-submit"
+    }
+
+    fun getExistingTools(model: Model): String {
+        model.addAttribute("tool", Tool(name = ""))
+        model.addAttribute("tools", tRepo.findAll())
+        return "delete-tool"
     }
 
     fun deleteTool(name: String): String {
@@ -56,7 +62,7 @@ class ToolService(val tRepo: ToolRepository) {
         }
         println("")
 
-        return "tools-status"
+        return "delete-tool-submit"
     }
 
 }

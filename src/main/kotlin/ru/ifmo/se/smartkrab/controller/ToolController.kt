@@ -29,9 +29,14 @@ class ToolController(val tService: ToolService) {
         return tService.addNewTool(model, tool)
     }
 
-    @DeleteMapping("/delete-tool/{name}")
-    fun deleteTool(@PathVariable name: String): String {
-        return tService.deleteTool(name)
+    @GetMapping("/delete-tool")
+    fun getExistingTools(model: Model): String {
+        return tService.getExistingTools(model)
+    }
+
+    @DeleteMapping("/delete-tool")
+    fun deleteTool(@ModelAttribute("tool") tool: Tool, model: Model): String {
+        return tService.deleteTool(tool.name)
     }
 
 }

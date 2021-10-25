@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete tool submit</title>
+</head>
+<body>
+<div th:insert="fragments :: dependencies"></div>
+<div th:insert="fragments :: header"></div>
+
+<div class="ui segment">
+    <h3 class="ui dividing header">Result</h3>
+    <div class="ui fluid label" style="text-align: center">
+        <span th:text="'Deleted tool: name - ' + ${tool.name} + ', status - ' + ${tool.status}"></span>
+    </div>
+    <div class="ui divider"></div>
+    <a class="ui basic fluid button" href="/delete-tool">
+        Delete another tool
+    </a>
+</div>
+
+</body>
+</html>

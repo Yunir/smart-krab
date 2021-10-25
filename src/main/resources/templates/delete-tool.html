@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Tools status</title>
+</head>
+
+<body>
+<div th:insert="fragments :: dependencies"></div>
+<div th:insert="fragments :: header"></div>
+
+
+<div class="ui segment" style="height: 310px">
+    <h3 class="ui dividing header">Tools status</h3>
+    <form class="ui form" action="#" modelAttribute="tool"
+          th:action="@{/delete-tool}"
+          th:object="${tool}" th:method="DELETE">
+        <div class="field">
+            <label>Tool name:</label>
+            <select id="toolSelect" class="ui dropdown" th:field="*{name}">
+                <option th:each="oneTool : ${tools}"
+                        th:value="${oneTool.name}"
+                        th:utext="${oneTool.name}"
+                        th:attr="tool-status=${oneTool.status}"/>
+            </select>
+        </div>
+        <div class="field">
+            <label>Tools status:</label>
+            <input id="status" th:field="*{status}" type="text"/>
+            <td th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Tool status Error</td>
+        </div>
+        <div class="ui divider"></div>
+        <input class="ui blue fluid button" type="submit" value="Submit"/>
+        <div class="ui divider"></div>
+
+    </form>
+</div>
+<script>
+
+    $('#toolSelect').on('change', function() {
+        var selectedOption = $(this).find('option:selected');
+        var status = $(selectedOption).attr('tool-status');
+        document.getElementById("status").value = status;
+    })
+
+</script>
+</body>
+
+</html>
