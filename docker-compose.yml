@@ -7,6 +7,6 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: krab
+      POSTGRES_DB: studs
+      POSTGRES_USER: s225096
       POSTGRES_PASSWORD: krab
-      POSTGRES_DATABASE: krab
