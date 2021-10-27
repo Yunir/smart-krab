@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service
 import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.Role
 import ru.ifmo.se.smartkrab.data.User
+import ru.ifmo.se.smartkrab.printReportToCLI
 import ru.ifmo.se.smartkrab.repository.UserRepository
 
 @Service
@@ -20,12 +21,7 @@ class UserService(val uRepo: UserRepository, val passwordEncoder: PasswordEncode
         user.password = passwordEncoder.encode(user.password)
         uRepo.save(user)
 
-        println("Users found with findAll():")
-        println("-------------------------------")
-        for (e in uRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
+        printReportToCLI("Users", uRepo.findAll().toList())
 
         return "new-user-submit"
     }

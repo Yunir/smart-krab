@@ -3,6 +3,7 @@ package ru.ifmo.se.smartkrab.service
 import org.springframework.stereotype.Service
 import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.Tool
+import ru.ifmo.se.smartkrab.printReportToCLI
 import ru.ifmo.se.smartkrab.repository.ToolRepository
 
 @Service
@@ -17,10 +18,7 @@ class ToolService(val tRepo: ToolRepository) {
         val tool = tRepo.findByName(name)
         model.addAttribute("tool", tool)
 
-        println("Found tool:")
-        println("-------------------------------")
-        println(tool)
-        println("")
+        printReportToCLI("Tool found by name", listOf(tool))
 
         return "delete-tool"
     }
@@ -30,12 +28,7 @@ class ToolService(val tRepo: ToolRepository) {
 
         tRepo.save(tool)
 
-        println("Tools found with findAll():")
-        println("-------------------------------")
-        for (e in tRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
+        printReportToCLI("Tools", tRepo.findAll().toList())
 
         return "new-tool-submit"
     }
@@ -50,17 +43,8 @@ class ToolService(val tRepo: ToolRepository) {
         val tool = tRepo.findByName(name)
         tRepo.delete(tool)
 
-        println("Deleted tool:")
-        println("-------------------------------")
-        println(tool)
-        println("")
-
-        println("Tools found with findAll():")
-        println("-------------------------------")
-        for (e in tRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
+        printReportToCLI("Tool deleted", listOf(tool))
+        printReportToCLI("Tools", tRepo.findAll().toList())
 
         return "delete-tool-submit"
     }

@@ -3,6 +3,7 @@ package ru.ifmo.se.smartkrab.service
 import org.springframework.stereotype.Service
 import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.ExtraCoins
+import ru.ifmo.se.smartkrab.printReportToCLI
 import ru.ifmo.se.smartkrab.repository.ExtraCoinsRepository
 
 @Service
@@ -18,12 +19,7 @@ class ExtraCoinsService(val ecRepo: ExtraCoinsRepository) {
 
         ecRepo.save(extraCoins)
 
-        println("ExtraCoins found with findAll():")
-        println("-------------------------------")
-        for (e in ecRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
+        printReportToCLI("ExtraCoins", ecRepo.findAll().toList())
 
         return "extra-coins-submit"
     }

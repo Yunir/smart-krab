@@ -20,30 +20,18 @@ class SmartKrabApplication {
     @Bean
     fun someExtraCoins(ecRepo: ExtraCoinsRepository): CommandLineRunner {
         return CommandLineRunner {
-            // save some coins
 //            ecRepo.save(ExtraCoins(5))
-//            ecRepo.save(ExtraCoins(1))
-//            ecRepo.save(ExtraCoins(7))
-//            ecRepo.save(ExtraCoins(2))
 
-            // fetch coins from database
-            println("ExtraCoins found with findAll():")
-            println("-------------------------------")
-            println(ecRepo.findAll().joinToString("\n"))
-            println("")
+            printReportToCLI("ExtraCoins", ecRepo.findAll().toList())
         }
     }
 
     @Bean
     fun someOrders(oRepo: OrderRepository): CommandLineRunner {
         return CommandLineRunner {
-            // save some orders
             // oRepo.save(OrderInfo(value = 5))
 
-            println("Orders found with findAll():")
-            println("-------------------------------")
-            println(oRepo.findAll().joinToString("\n"))
-            println("")
+            printReportToCLI("Orders", oRepo.findAll().toList())
         }
     }
 
@@ -53,20 +41,8 @@ class SmartKrabApplication {
 //            passwordEncoder.encode("krab")
 //                ?.let { User(login = "krusty", password = it, role = Role.ROLE_OWNER, enabled = true) }
 //                ?.let { uRepo.save(it) }
-//
-//            passwordEncoder.encode("test")
-//                ?.let { User(login = "test", password = it, role = Role.ROLE_CASHIER, enabled = true) }
-//                ?.let { uRepo.save(it) }
-//
-//            passwordEncoder.encode("chef")
-//                ?.let { User(login = "chef", password = it, role = Role.ROLE_CHEF, enabled = true) }
-//                ?.let { uRepo.save(it) }
 
-            println("Users found with findAll():")
-            println("-------------------------------")
-            println(uRepo.findAll().joinToString("\n"))
-            println("")
+            printReportToCLI("Users", uRepo.findAll().toList())
         }
     }
 }
-

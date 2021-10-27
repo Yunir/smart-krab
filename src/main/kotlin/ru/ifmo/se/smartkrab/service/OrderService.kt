@@ -5,6 +5,7 @@ import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.OrderInfo
 import ru.ifmo.se.smartkrab.repository.OrderRepository
 import ru.ifmo.se.smartkrab.data.Position
+import ru.ifmo.se.smartkrab.printReportToCLI
 
 @Service
 class OrderService(val oRepo: OrderRepository) {
@@ -32,12 +33,7 @@ class OrderService(val oRepo: OrderRepository) {
 
         oRepo.save(order)
 
-        println("Orders found with findAll():")
-        println("-------------------------------")
-        for (e in oRepo.findAll()) {
-            println(e.toString())
-        }
-        println("")
+        printReportToCLI("Orders", oRepo.findAll().toList())
 
         return "new-order-submit"
     }
@@ -49,10 +45,7 @@ class OrderService(val oRepo: OrderRepository) {
 
         oRepo.save(orderInfo)
 
-        println("Updated order:")
-        println("-------------------------------")
-        println(orderInfo)
-        println("")
+        printReportToCLI("Order updated status", listOf(orderInfo))
 
         return "cooking-submit"
     }
