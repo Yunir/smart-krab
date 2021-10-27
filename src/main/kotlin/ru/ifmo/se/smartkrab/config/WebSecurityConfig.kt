@@ -18,17 +18,18 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         if (http != null) {
             http.authorizeRequests()
-                    .antMatchers("/", "/css/**", "/img/**", "/js/**", "/get-tool/**").permitAll()
-                    .antMatchers("/new-order/**", "/new-user", "/extra-coins", "/antiplankton/**").hasRole("OWNER")
-                    .antMatchers("/new-order", "/antiplankton").hasRole("CASHIER")
-                    .antMatchers("/order-status/**", "/new-tool", "/delete-tool/**").hasRole("CHEF")
-                    .anyRequest().authenticated()
-                    .and()
-                    .formLogin().loginPage("/sign-in").permitAll()
-                    .and()
-                    .logout().permitAll()
-                    .and()
-                    .exceptionHandling().accessDeniedPage("/access-denied")
+                .antMatchers("/", "/css/**", "/img/**", "/js/**", "/get-tool/**").permitAll()
+                .antMatchers("/new-order/**", "/new-user", "/extra-coins").hasRole("OWNER")
+                .antMatchers("/new-order").hasRole("CASHIER")
+                .antMatchers("/antiplankton").hasAnyRole("OWNER", "CASHIER")
+                .antMatchers("/order-status/**", "/new-tool", "/delete-tool/**").hasRole("CHEF")
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().loginPage("/sign-in").permitAll()
+                .and()
+                .logout().permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/access-denied")
         }
     }
 
@@ -44,8 +45,8 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     @Throws(Exception::class)
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth.jdbcAuthentication().dataSource(dataSource)
-                .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("select login,password,enabled from krab_user where login=?")
-                .authoritiesByUsernameQuery("select login, role from krab_user where login=?")
+            .passwordEncoder(passwordEncoder())
+            .usersByUsernameQuery("select login,password,enabled from krab_user where login=?")
+            .authoritiesByUsernameQuery("select login, role from krab_user where login=?")
     }
 }
