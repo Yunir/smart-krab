@@ -13,6 +13,27 @@
 
 <div class="ui segment">
     <h1>Daily report</h1>
+    <table>
+        <thead>
+        <tr>
+            <th> Position</th>
+            <th> Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${orders.empty}">
+            <td colspan="2"> No Orders Available</td>
+        </tr>
+        <tr th:each="order : ${orders}">
+            <td><span th:text="${order.position}"> Position </span></td>
+            <td><span th:text="${order.value}"> Value </span></td>
+        </tr>
+        <tr th:each="extraCoin : ${extraCoins}">
+            <td><span th:text="'extra coin #' + ${extraCoin.id}"> Position </span></td>
+            <td><span th:text="${extraCoin.value}"> Value </span></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
