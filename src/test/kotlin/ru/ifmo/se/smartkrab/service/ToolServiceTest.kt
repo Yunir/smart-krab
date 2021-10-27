@@ -26,7 +26,7 @@ class ToolServiceTest {
         Mockito.`when`(tRepo.findByName(eq(TOOL_NAME)))
                 .thenReturn(tool)
 
-        tService.getTool(ExtendedModelMap(), TOOL_NAME)
+        tService.getTool(ExtendedModelMap()) // , TOOL_NAME
 
         Mockito.verify(tRepo).findByName(TOOL_NAME)
     }

@@ -18,11 +18,14 @@ class UserService(val uRepo: UserRepository, val passwordEncoder: PasswordEncode
 
     fun addNewUser(model: Model, user: User): String {
         model.addAttribute("user", user)
-        user.password = passwordEncoder.encode(user.password)
-        uRepo.save(user)
-
-        printReportToCLI("Users", uRepo.findAll().toList())
-
-        return "new-user-submit"
+        return try {
+            uRepo.findByLogin(user.login)
+            user.password = passwordEncoder.encode(user.password)
+            uRepo.save(user)
+            printReportToCLI("Users", uRepo.findAll().toList())
+            "new-user-submit"
+        } catch (e: Exception) {
+            "new-user-failed"
+        }
     }
 }

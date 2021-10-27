@@ -29,4 +29,16 @@ class UserServiceTest {
         Mockito.verify(uRepo).save(user)
     }
 
+    @Test
+    fun shouldNotAddExistingUser() {
+        val user1 = User("test", "test", Role.ROLE_CASHIER)
+        val user2 = User("test", "test", Role.ROLE_CASHIER)
+
+        uService.addNewUser(ExtendedModelMap(), user1)
+        uService.addNewUser(ExtendedModelMap(), user2)
+
+        Mockito.verify(uRepo).save(user1)
+        Mockito.verify(uRepo).save(user2)
+    }
+
 }
