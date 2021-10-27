@@ -13,6 +13,27 @@
 
 <div class="ui segment">
     <h1>Anti Plankton</h1>
+    <div class="ui divider"></div>
+<!--    <form class="ui form" action="#" modelAttribute="status"-->
+<!--          th:action="@{/antiplankton}"-->
+<!--           th:method="POST">-->
+<!--    <p th:text="'Current status: ' + ${status}" />-->
+<!--    <input class="ui blue fluid button" type="submit" value="Enable"/>-->
+<!--    <div class="ui divider"></div>-->
+<!--    </form>-->
+
+    <form class="ui form" action="#"
+          th:action="@{/antiplankton}"
+          th:object="${antiplankton}" method="post">
+<!--        <div class="field">-->
+<!--            <label>Extra coins value (1 &#45;&#45; 5000):</label>-->
+<!--            <input th:field="*{value}" type="number" min="1" max="5000"/>-->
+<!--            <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>-->
+<!--        </div>-->
+
+        <p th:text="'Current status: ' + *{status}" />
+        <input class="ui blue fluid button" type="submit" value="Toggle"/>
+    </form>
 </div>
 
 </body>

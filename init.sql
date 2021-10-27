@@ -26,6 +26,11 @@ name varchar,
 status integer
 );
 
+create table "anti_plankton_status" (
+id bigserial not null primary key,
+status boolean
+);
+
 INSERT into extra_coins (value, added_at) values (5, current_timestamp);
 INSERT into extra_coins (value, added_at) values (1, current_timestamp);
 INSERT into extra_coins (value, added_at) values (7, current_timestamp);
@@ -39,3 +44,5 @@ insert into krab_user (login, password, enabled, role)
 VALUES ('squid', '$2a$10$irUhcMVzLeIME.z9RGIfSO1.3CpbgQPuGANLjb7Wd0Cp0k/5fRoge', true, 'ROLE_CASHIER'); -- test
 insert into krab_user (login, password, enabled, role)
 VALUES ('bob', '$2a$10$uj0Xz2wG10k1NuKN6Z6Xs.ZFaoDuNrX6tFSg5Bs6q/jbOeIf3uLju', true, 'ROLE_CHEF'); -- chef
+
+insert into anti_plankton_status (status) values (FALSE)
