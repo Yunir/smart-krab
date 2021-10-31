@@ -1,4 +1,4 @@
-package ru.ifmo.se.smartkrab
+package ru.ifmo.se.smartkrab.access
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

@@ -19,10 +19,10 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
         if (http != null) {
             http.authorizeRequests()
                 .antMatchers("/", "/css/**", "/img/**", "/js/**", "/get-tool/**").permitAll()
-                .antMatchers("/new-order/**", "/new-user", "/extra-coins").hasRole("OWNER")
+                .antMatchers("/antiplankton", "/daily-report").hasAnyRole("OWNER", "CASHIER")
+                .antMatchers("/new-user", "/extra-coins").hasRole("OWNER")
                 .antMatchers("/new-order").hasRole("CASHIER")
-                .antMatchers("/antiplankton").hasAnyRole("OWNER", "CASHIER")
-                .antMatchers("/order-status/**", "/new-tool", "/delete-tool/**").hasRole("CHEF")
+                .antMatchers("/order-status", "/new-tool", "/delete-tool", "/cooking").hasRole("CHEF")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/sign-in").permitAll()
