@@ -18,7 +18,7 @@ class ToolService(val tRepo: ToolRepository) {
         val tool = tRepo.findByName(name)
         model.addAttribute("tool", tool)
 
-        printReportToCLI("Tool found by name", listOf(tool))
+        printReportToCLI("Tool found by name", listOfNotNull(tool))
 
         return "delete-tool"
     }
@@ -41,10 +41,11 @@ class ToolService(val tRepo: ToolRepository) {
 
     fun deleteTool(name: String): String {
         val tool = tRepo.findByName(name)
-        tRepo.delete(tool)
-
-        printReportToCLI("Tool deleted", listOf(tool))
-        printReportToCLI("Tools", tRepo.findAll().toList())
+        if (tool != null) {
+            tRepo.delete(tool)
+            printReportToCLI("Tool deleted", listOfNotNull(tool))
+            printReportToCLI("Tools", tRepo.findAll().toList())
+        }
 
         return "delete-tool-submit"
     }

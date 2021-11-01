@@ -1,5 +1,6 @@
 package ru.ifmo.se.smartkrab
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -35,14 +36,14 @@ class SmartKrabApplication {
         }
     }
 
-    @Bean
-    fun ownerUser(uRepo: UserRepository, passwordEncoder: PasswordEncoder): CommandLineRunner {
-        return CommandLineRunner {
-//            passwordEncoder.encode("krab")
-//                ?.let { User(login = "krusty", password = it, role = Role.ROLE_OWNER, enabled = true) }
-//                ?.let { uRepo.save(it) }
-
-            printReportToCLI("Users", uRepo.findAll().toList())
-        }
-    }
+//    @Bean
+//    fun ownerUser(uRepo: UserRepository, passwordEncoder: PasswordEncoder): CommandLineRunner {
+//        return CommandLineRunner {
+////            passwordEncoder.encode("krab")
+////                ?.let { User(login = "krusty", password = it, role = Role.ROLE_OWNER, enabled = true) }
+////                ?.let { uRepo.save(it) }
+//
+//            printReportToCLI("Users", uRepo.findAll().toList())
+//        }
+//    }
 }

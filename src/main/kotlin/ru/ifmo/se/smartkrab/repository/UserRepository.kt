@@ -5,5 +5,5 @@ import org.springframework.ui.Model
 import ru.ifmo.se.smartkrab.data.User
 
 interface UserRepository : CrudRepository<User, Long> {
-    fun findByLogin(login: String): User
+    fun findByLogin(login: String): User?
 }

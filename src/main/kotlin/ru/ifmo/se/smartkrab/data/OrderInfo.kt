@@ -14,8 +14,8 @@ class OrderInfo (
     var position: String = "Kraby Pattie",
     @field:NotNull(message = "Write value between 1 and 10")
     @field:Min(1, message = "value should be greater than 1")
-    @field:Max(10, message = "value should be less than 10")
-    var value: Int? = 0,
+    @field:Max(10, message = "value should be less than or equals to 10")
+    var value: Int? = 1,
     var status: String = "registered",
     var addedAt: LocalDateTime = LocalDateTime.now(),
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null
