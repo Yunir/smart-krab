@@ -18,5 +18,6 @@ class MvcConfig : WebMvcConfigurer {
         registry.addViewController("/delete-tool").setViewName("delete-tool")
         registry.addViewController("/antiplankton").setViewName("antiplankton")
         registry.addViewController("/access-denied").setViewName("access-denied")
+        registry.addViewController("/privacy").setViewName("privacy")
     }
 }
