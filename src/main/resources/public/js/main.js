@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log('!!!');
+    $('.ui.dropdown').dropdown()
 });

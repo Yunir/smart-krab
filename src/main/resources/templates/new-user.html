@@ -11,25 +11,29 @@
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
 
-<div class="ui segment" style="height: 370px">
+<div class="ui segment" style="height: 270px">
     <h3 class="ui dividing header">Add new user</h3>
     <form class="ui form" action="#" modelAttribute="user"
           th:action="@{/new-user}"
           th:object="${user}" method="post">
-        <div class="field">
-            <label>User login:</label>
-            <input th:field="*{login}" type="text"/>
-            <td th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Login Error</td>
-        </div>
-        <div class="field">
-            <label>User password:</label>
-            <input id="password" th:field="*{password}" type="text"/>
-            <button type="button" onclick="genPaswd()">Generate</button>
-            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+        <div class="two fields">
+            <div class="field">
+                <label>User login:</label>
+                <input th:field="*{login}" type="text"/>
+                <td th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Login Error</td>
+            </div>
+            <div class="field">
+                <label>User password:</label>
+                <div class="ui action input">
+                    <input id="password" th:field="*{password}" type="text"/>
+                    <div class="ui button" onclick="genPaswd()">Generate</div>
+                </div>
+                <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+            </div>
         </div>
         <div class="field">
             <label>User role:</label>
-            <select th:field="*{role}" id="resourceSelect">
+            <select class="ui dropdown" th:field="*{role}" id="resourceSelect">
                 <option value="ROLE_CHEF">Chef</option>
                 <option value="ROLE_CASHIER">Cashier</option>
                 <option value="ROLE_OWNER">Owner</option>
@@ -43,10 +47,8 @@
 </div>
 <script>
     function genPaswd() {
-        document.getElementById("password").value = Math.random().toString(36).slice(-8);;
+        document.getElementById("password").value = Math.random().toString(36).slice(-8);
     }
-
-
 </script>
 </body>
 
