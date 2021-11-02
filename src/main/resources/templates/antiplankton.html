@@ -14,26 +14,20 @@
 <div class="ui segment">
     <h1>Anti Plankton</h1>
     <div class="ui divider"></div>
-<!--    <form class="ui form" action="#" modelAttribute="status"-->
-<!--          th:action="@{/antiplankton}"-->
-<!--           th:method="POST">-->
-<!--    <p th:text="'Current status: ' + ${status}" />-->
-<!--    <input class="ui blue fluid button" type="submit" value="Enable"/>-->
-<!--    <div class="ui divider"></div>-->
-<!--    </form>-->
 
-    <form class="ui form" action="#"
-          th:action="@{/antiplankton}"
-          th:object="${antiplankton}" method="post">
-<!--        <div class="field">-->
-<!--            <label>Extra coins value (1 &#45;&#45; 5000):</label>-->
-<!--            <input th:field="*{value}" type="number" min="1" max="5000"/>-->
-<!--            <td th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</td>-->
-<!--        </div>-->
-
-        <p th:text="'Current status: ' + *{status}" />
-        <input class="ui blue fluid button" type="submit" value="Toggle"/>
+    <form class="ui form" action="#" th:action="@{/antiplankton}" th:object="${antiplankton}" method="post">
+        <div th:if="${antiplankton.status != true}">
+            <img th:src="@{/img/plankton.png}" style="height: 180px; margin-left: 50px">
+            <img th:src="@{/img/molot.png}" style="height: 200px;">
+        </div>
+        <div th:if="${antiplankton.status == true}">
+            <img th:src="@{/img/minus-plankton.png}" style="height: 180px; margin-left: 130px">
+            <img th:src="@{/img/resh.png}" style="height: 200px; position: absolute; left: 0; width: 470px">
+        </div>
+        <input class="ui fluid basic segment" type="submit" value="" title="Toggle status"
+               style="position: absolute; height: 230px; margin-top: -220px; cursor: pointer"/>
     </form>
+
 </div>
 
 <div th:insert="fragments :: footer"></div>
