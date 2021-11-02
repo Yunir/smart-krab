@@ -30,35 +30,52 @@
 </div>
 
 
-<header th:fragment="header">
-    <img th:src="@{/img/krabs.png}" alt="krabs" style="position: absolute; height: 200px; z-index: 999">
-    <div style="width:100%; background-color:#f2a19e; margin-bottom: 200px">
-        <div class="ui secondary menu" style="margin-left: 200px">
-            <a class="item" th:href="@{/}">Smart Krab</a>
-            <a class="item" th:href="@{/new-user}">Add new user</a>
-            <a class="item" th:href="@{/extra-coins}">Add extra coins</a>
-            <a class="item" th:href="@{/daily-report}">Daily report</a>
-            <a class="item" th:href="@{/new-order}">Create new order</a>
-            <a class="item" th:href="@{/cooking}">Cooking</a>
-            <a class="item" th:href="@{/new-tool}">Add new tool</a>
-            <a class="item" th:href="@{/delete-tool}">Tools status</a>
-            <a class="item" th:href="@{/antiplankton}">Anti Plankton</a>
+<div th:fragment="navbar">
+    <a class="item" th:href="@{/}" style="color: aqua; font-size: 30px; margin-left: 150px">Smart Krab</a>
 
+    <a class="item" th:href="@{/new-user}">Add new user</a>
+    <a class="item" th:href="@{/extra-coins}">Add extra coins</a>
+    <a class="item" th:href="@{/daily-report}">Daily report</a>
+    <a class="item" th:href="@{/new-order}">Create new order</a>
+    <a class="item" th:href="@{/cooking}">Cooking</a>
+    <a class="item" th:href="@{/new-tool}">Add new tool</a>
+    <a class="item" th:href="@{/delete-tool}">Tools status</a>
+    <a class="item" th:href="@{/antiplankton}">Anti Plankton</a>
+
+    <div class="right menu">
+        <div class="ui item" th:if="${#httpServletRequest.remoteUser != null}">
+            <span class="ui teal label" style="padding: 15px">
+                <i class="user icon"></i>
+                <span th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</span>
+            </span>
+        </div>
+        <div class="ui item" th:if="${#httpServletRequest.remoteUser != null}">
+            <form th:action="@{/logout}" method="post">
+                <input class="ui basic red button" type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        <div class="ui item" th:if="${#httpServletRequest.remoteUser == null}">
+            <a class="ui basic blue button" th:href="@{/sign-in}">Sign in</a>
+        </div>
+    </div>
+</div>
+
+<header th:fragment="header" th:remove="tag">
+    <div class="ui tablet computer only padded grid" id="computer-navbar">
+        <img th:src="@{/img/krabs.png}" alt="krabs" style="position: absolute; height: 200px; z-index: 999">
+        <div class="ui top fixed menu" style="padding: 0; background-color: #f2a19e">
+            <div th:include="this :: navbar" th:remove="tag"></div>
+        </div>
+    </div>
+
+    <div class="ui mobile only padded grid" id="tablet-mobile-navbar">
+        <img th:src="@{/img/krabs.png}" alt="krabs" style="position: absolute; height: 120px; z-index: 999">
+        <div class="ui top fixed menu" style="padding: 0; flex-wrap: wrap; background-color: #f2a19e">
             <div class="right menu">
-                <div class="ui item" th:if="${#httpServletRequest.remoteUser != null}">
-                    <span class="ui teal label" style="padding: 15px">
-                        <i class="user icon"></i>
-                        <span th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</span>
-                    </span>
-                </div>
-                <div class="ui item" th:if="${#httpServletRequest.remoteUser != null}">
-                    <form th:action="@{/logout}" method="post">
-                        <input class="ui basic red button" type="submit" value="Sign Out"/>
-                    </form>
-                </div>
-                <div class="ui item" th:if="${#httpServletRequest.remoteUser == null}">
-                    <a class="ui basic blue button" th:href="@{/sign-in}">Sign in</a>
-                </div>
+                <a id="mobile_item" class="item"><i class="bars icon"></i></a>
+            </div>
+            <div class="ui stackable fluid menu" style="display: none;">
+                <div th:include="this :: navbar" th:remove="tag"></div>
             </div>
         </div>
     </div>
@@ -66,12 +83,19 @@
 
 <footer th:fragment="footer">
     <div class="ui center aligned container">
-        <a th:href="@{/privacy}" target="_blank">Privacy policy</a> |
-        <a th:href="@{/terms}" target="_blank">Terms of service</a>
+        <a th:href="@{/privacy}" target="_blank" style="color: aqua">Privacy policy</a> |
+        <a th:href="@{/terms}" target="_blank" style="color: aqua">Terms of service</a>
     </div>
 </footer>
 
-
+<div th:fragment="scripts">
+    <script type="text/javascript">
+        $("#mobile_item").click(function() {
+            $(".mobile.only.grid .ui.stackable.menu").toggle(300);
+        });
+        $(".ui.dropdown.item").dropdown();
+    </script>
+</div>
 
 </body>
 

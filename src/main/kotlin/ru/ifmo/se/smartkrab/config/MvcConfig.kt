@@ -20,5 +20,6 @@ class MvcConfig : WebMvcConfigurer {
         registry.addViewController("/access-denied").setViewName("access-denied")
         registry.addViewController("/privacy").setViewName("privacy")
         registry.addViewController("/terms").setViewName("terms")
+        registry.addViewController("/error").setViewName("error")
     }
 }

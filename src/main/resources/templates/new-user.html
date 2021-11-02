@@ -45,6 +45,9 @@
 
     </form>
 </div>
+
+<div th:insert="fragments :: footer"></div>
+<div th:insert="fragments :: scripts"></div>
 <script>
     function genPaswd() {
         document.getElementById("password").value = Math.random().toString(36).slice(-8);
