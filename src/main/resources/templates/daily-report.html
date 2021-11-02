@@ -5,19 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Daily report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
 </head>
 
 <body>
+
 <div th:insert="fragments :: dependencies"></div>
 <div th:insert="fragments :: header"></div>
 
-<div class="ui segment">
-    <h1>Daily report</h1>
-    <table>
+<div class="ui segment" style="max-width: 800px; width: 100%; height: 410px">
+    <h2 class="ui dividing header">Daily report</h2>
+    <div style="overflow: scroll; max-height: 280px">
+    <table class="ui celled table" id="report_table">
         <thead>
         <tr>
             <th> Position</th>
             <th> Value</th>
+            <th> Timestamp</th>
         </tr>
         </thead>
         <tbody>
@@ -27,17 +31,45 @@
         <tr th:each="order : ${orders}">
             <td><span th:text="${order.position}"> Position </span></td>
             <td><span th:text="${order.value}"> Value </span></td>
+            <td> --- </td>
         </tr>
         <tr th:each="extraCoin : ${extraCoins}">
             <td><span th:text="'extra coin #' + ${extraCoin.id}"> Position </span></td>
             <td><span th:text="${extraCoin.value}"> Value </span></td>
+            <td> --- </td>
         </tr>
         </tbody>
     </table>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui blue button" onclick="export_as_pdf()" style="right: 20px; position: absolute"> Export table as PDF</div>
 </div>
 
 <div th:insert="fragments :: footer"></div>
 <div th:insert="fragments :: scripts"></div>
+
+<script>
+
+    function export_as_pdf() {
+        let doc = new jsPDF();
+        let elementHandler = {
+            '#ignorePDF': function (element, renderer) {
+                return true;
+            }
+        };
+        let source = window.document.getElementById("report_table");
+        doc.fromHTML(
+            source,
+            15,
+            15,
+            {
+                'width': 180,'elementHandlers': elementHandler
+            });
+        doc.save('new-report.pdf');
+    }
+
+</script>
+
 </body>
 
 </html>
