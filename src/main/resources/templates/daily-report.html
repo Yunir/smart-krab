@@ -31,12 +31,12 @@
         <tr th:each="order : ${orders}">
             <td><span th:text="${order.position}"> Position </span></td>
             <td><span th:text="${order.value}"> Value </span></td>
-            <td> --- </td>
+            <td><span th:text="${order.addedAt}"> Timestamp </span></td>
         </tr>
         <tr th:each="extraCoin : ${extraCoins}">
             <td><span th:text="'extra coin #' + ${extraCoin.id}"> Position </span></td>
             <td><span th:text="${extraCoin.value}"> Value </span></td>
-            <td> --- </td>
+            <td><span th:text="${extraCoin.addedAt}"> Timestamp </span></td>
         </tr>
         </tbody>
     </table>
