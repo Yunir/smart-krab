@@ -22,7 +22,7 @@
             <select class="ui dropdown" th:field="*{id}">
                 <option th:each="oneOrder : ${orders}"
                         th:value="${oneOrder.id}"
-                        th:utext="${oneOrder.id}"/>
+                        th:utext="${oneOrder.position}"/>
             </select>
         </div>
         <div class="field">
