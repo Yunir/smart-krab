@@ -43,6 +43,12 @@
 
 <script>
 
+    window.onload = function() {
+        var selectedOption = $('#toolSelect').find('option:selected');
+        var status = $(selectedOption).attr('tool-status');
+        document.getElementById("status").value = status;
+    }
+
     $('#toolSelect').on('change', function() {
         var selectedOption = $(this).find('option:selected');
         var status = $(selectedOption).attr('tool-status');
