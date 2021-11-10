@@ -177,24 +177,10 @@ class RoleBasedAccessTest() {
             .andExpect(status().is4xxClientError)
     }
 
-//    @Test
-//    @WithMockUser(username="krusty", roles = arrayOf("OWNER"))
-//    fun ownerHasAccessToAntiPlanktonPage() {
-//        mvc.perform(get("/antiplankton"))
-//            .andExpect(content().string(containsString("Current status:")))
-//    }
-
     @Test
     @WithMockUser(username="sponge", roles = arrayOf("CHEF"))
     fun chefDenyAccessToAntiPlanktonPage() {
         mvc.perform(get("/antiplankton"))
             .andExpect(status().is4xxClientError)
     }
-
-//    @Test
-//    @WithMockUser(username="squid", roles = arrayOf("CASHIER"))
-//    fun cashierHasAccessToAntiPlanktonPage() {
-//        mvc.perform(get("/antiplankton"))
-//            .andExpect(content().string(containsString("Current status:")))
-//    }
 }
