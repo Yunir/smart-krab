@@ -33,14 +33,14 @@
 <div th:fragment="navbar">
     <a class="item" th:href="@{/}" style="color: aqua; font-size: 30px; margin-left: 150px">Smart Krab</a>
 
-    <a class="item" th:href="@{/new-user}">Add new user</a>
-    <a class="item" th:href="@{/extra-coins}">Add extra coins</a>
-    <a class="item" th:href="@{/daily-report}">Daily report</a>
-    <a class="item" th:href="@{/new-order}">Create new order</a>
-    <a class="item" th:href="@{/cooking}">Cooking</a>
-    <a class="item" th:href="@{/new-tool}">Add new tool</a>
-    <a class="item" th:href="@{/delete-tool}">Tools status</a>
-    <a class="item" th:href="@{/antiplankton}">Anti Plankton</a>
+    <a class="item" sec:authorize="hasAnyRole('OWNER')" th:href="@{/new-user}">Add new user</a>
+    <a class="item" sec:authorize="hasAnyRole('OWNER')" th:href="@{/extra-coins}">Add extra coins</a>
+    <a class="item" sec:authorize="hasAnyRole('OWNER', 'CASHIER')" th:href="@{/daily-report}">Daily report</a>
+    <a class="item" sec:authorize="hasAnyRole('CASHIER')" th:href="@{/new-order}">Create new order</a>
+    <a class="item" sec:authorize="hasAnyRole('CHEF')" th:href="@{/cooking}">Cooking</a>
+    <a class="item" sec:authorize="hasAnyRole('CHEF')" th:href="@{/new-tool}">Add new tool</a>
+    <a class="item" sec:authorize="hasAnyRole('CHEF')" th:href="@{/delete-tool}">Tools status</a>
+    <a class="item" sec:authorize="hasAnyRole('OWNER', 'CASHIER')" th:href="@{/antiplankton}">Anti Plankton</a>
 
     <div class="right menu">
         <div class="ui item" th:if="${#httpServletRequest.remoteUser != null}">
