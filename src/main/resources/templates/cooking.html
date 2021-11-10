@@ -18,16 +18,17 @@
           th:action="@{/order-status}"
           th:object="${order}" th:method="PUT">
         <div class="field">
-            <label>Order id:</label>
-            <select class="ui dropdown" th:field="*{id}">
+            <label>N: Order name / count</label>
+            <select id="orderSelect" class="ui search dropdown" th:field="*{id}">
                 <option th:each="oneOrder : ${orders}"
                         th:value="${oneOrder.id}"
-                        th:utext="${oneOrder.position}"/>
+                        th:utext="${oneOrder.id + ': ' + oneOrder.position + ' / ' + oneOrder.value}"
+                        th:attr="status=${oneOrder.status}"/>
             </select>
         </div>
         <div class="field">
             <label>Order status:</label>
-            <select th:field="*{status}" id="status">
+            <select class="ui dropdown" th:field="*{status}" id="status">
                 <option value="registered">Registered</option>
                 <option value="inProgress">In progress</option>
                 <option value="finished">Finished</option>
@@ -43,6 +44,23 @@
 
 <div th:insert="fragments :: footer"></div>
 <div th:insert="fragments :: scripts"></div>
+
+<script>
+
+    window.onload = function() {
+        let selectedOption = $('#orderSelect').find('option:selected');
+        let status = $(selectedOption).attr('status');
+        $('#status').dropdown('set selected', status)
+    }
+
+    $('#orderSelect').on('change', function() {
+        let selectedOption = $(this).find('option:selected');
+        let status = $(selectedOption).attr('status');
+        $('#status').dropdown('set selected', status)
+    })
+
+</script>
+
 </body>
 
 </html>
